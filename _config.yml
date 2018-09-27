@@ -1,6 +1,6 @@
 # Site settings
 title: Sourav Debnath
-description: A portfolio page showcasing my engineering skills with greater focus on things other than them"
+description: A portfolio page showcasing my engineering skills with greater focus on things other than them
 baseurl: "" # the subpath of your site, e.g. /blog
 production_url: "https://sourav27.github.io" # the base hostname & protocol for your site e.g. http://willianjusten.com.br
 BASE_PATH: https://sourav27.github.io
@@ -17,4 +17,7 @@ gplus_username:  lorem_ipsum
 google-analytics:
   id: "UA-126572552-1"
 
-exclude: ['package.json', 'src' , 'node_modules']
+exclude: ['vendor','package.json', 'src' , 'node_modules']
+
+plugins:
+  - jekyll-seo-tag
