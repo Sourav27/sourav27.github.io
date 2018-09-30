@@ -1,0 +1,27 @@
+{
+  "name": "particle",
+  "version": "1.0.0",
+  "description": "Jekyll portfolio",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sourav27/sourav27.github.io.git"
+  },
+  "keywords": [
+    "particle.js"
+  ],
+  "author": "Sourav Debnath",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sourav27/sourav27.github.io/issues"
+  },
+  "homepage": "https://github.com/sourav27/sourav27.github.io#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^4.0.0",
+    "gulp-shell": "^0.6.5"
+  }
+}
