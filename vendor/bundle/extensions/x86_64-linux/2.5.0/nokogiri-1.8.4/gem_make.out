@@ -1,5 +1,5 @@
-current directory: /mnt/c/Users/sourav27/Ubuntu/sourav27.github.io/vendor/bundle/gems/nokogiri-1.8.4/ext/nokogiri
-/usr/bin/ruby2.5 -r ./siteconf20180927-15352-1nbr7yx.rb extconf.rb
+current directory: /mnt/c/Users/sourav27/Ubuntu/salockhart.github.io/vendor/bundle/gems/nokogiri-1.8.4/ext/nokogiri
+/usr/bin/ruby2.5 -r ./siteconf20180929-523-1ces9es.rb extconf.rb
 checking if the C compiler accepts ... yes
 Building nokogiri using packaged libraries.
 Using mini_portile version 2.3.0
@@ -30,11 +30,11 @@ Note, however, that nokogiri is not fully compatible with arbitrary
 versions of libxml2 provided by OS/package vendors.
 ************************************************************************
 Extracting libxml2-2.9.8.tar.gz into tmp/x86_64-pc-linux-gnu/ports/libxml2/2.9.8... OK
-Running git apply with /mnt/c/Users/sourav27/Ubuntu/sourav27.github.io/vendor/bundle/gems/nokogiri-1.8.4/patches/libxml2/0001-Revert-Do-not-URI-escape-in-server-side-includes.patch... OK
+Running git apply with /mnt/c/Users/sourav27/Ubuntu/salockhart.github.io/vendor/bundle/gems/nokogiri-1.8.4/patches/libxml2/0001-Revert-Do-not-URI-escape-in-server-side-includes.patch... OK
 Running 'configure' for libxml2 2.9.8... OK
 Running 'compile' for libxml2 2.9.8... OK
 Running 'install' for libxml2 2.9.8... OK
-Activating libxml2 2.9.8 (from /mnt/c/Users/sourav27/Ubuntu/sourav27.github.io/vendor/bundle/gems/nokogiri-1.8.4/ports/x86_64-pc-linux-gnu/libxml2/2.9.8)...
+Activating libxml2 2.9.8 (from /mnt/c/Users/sourav27/Ubuntu/salockhart.github.io/vendor/bundle/gems/nokogiri-1.8.4/ports/x86_64-pc-linux-gnu/libxml2/2.9.8)...
 ************************************************************************
 IMPORTANT NOTICE:
 
@@ -58,7 +58,7 @@ Extracting libxslt-1.1.32.tar.gz into tmp/x86_64-pc-linux-gnu/ports/libxslt/1.1.
 Running 'configure' for libxslt 1.1.32... OK
 Running 'compile' for libxslt 1.1.32... OK
 Running 'install' for libxslt 1.1.32... OK
-Activating libxslt 1.1.32 (from /mnt/c/Users/sourav27/Ubuntu/sourav27.github.io/vendor/bundle/gems/nokogiri-1.8.4/ports/x86_64-pc-linux-gnu/libxslt/1.1.32)...
+Activating libxslt 1.1.32 (from /mnt/c/Users/sourav27/Ubuntu/salockhart.github.io/vendor/bundle/gems/nokogiri-1.8.4/ports/x86_64-pc-linux-gnu/libxslt/1.1.32)...
 checking for -llzma... no
 checking for xmlParseDoc() in libxml/parser.h... yes
 checking for xsltParseStylesheetDoc() in libxslt/xslt.h... yes
@@ -72,10 +72,10 @@ checking for xmlSchemaSetValidStructuredErrors()... yes
 checking for xmlSchemaSetParserStructuredErrors()... yes
 creating Makefile
 
-current directory: /mnt/c/Users/sourav27/Ubuntu/sourav27.github.io/vendor/bundle/gems/nokogiri-1.8.4/ext/nokogiri
+current directory: /mnt/c/Users/sourav27/Ubuntu/salockhart.github.io/vendor/bundle/gems/nokogiri-1.8.4/ext/nokogiri
 make "DESTDIR=" clean
 
-current directory: /mnt/c/Users/sourav27/Ubuntu/sourav27.github.io/vendor/bundle/gems/nokogiri-1.8.4/ext/nokogiri
+current directory: /mnt/c/Users/sourav27/Ubuntu/salockhart.github.io/vendor/bundle/gems/nokogiri-1.8.4/ext/nokogiri
 make "DESTDIR="
 compiling html_document.c
 compiling html_element_description.c
@@ -179,9 +179,9 @@ xslt_stylesheet.c:226:28: warning: unused parameter ‘data’ [-Wunused-paramet
                             ^
 linking shared-object nokogiri/nokogiri.so
 Cleaning files only used during build.
-rm -rf /mnt/c/Users/sourav27/Ubuntu/sourav27.github.io/vendor/bundle/gems/nokogiri-1.8.4/ext/nokogiri/tmp/x86_64-pc-linux-gnu/ports
-rm -rf /mnt/c/Users/sourav27/Ubuntu/sourav27.github.io/vendor/bundle/gems/nokogiri-1.8.4/ports
+rm -rf /mnt/c/Users/sourav27/Ubuntu/salockhart.github.io/vendor/bundle/gems/nokogiri-1.8.4/ext/nokogiri/tmp/x86_64-pc-linux-gnu/ports
+rm -rf /mnt/c/Users/sourav27/Ubuntu/salockhart.github.io/vendor/bundle/gems/nokogiri-1.8.4/ports
 
-current directory: /mnt/c/Users/sourav27/Ubuntu/sourav27.github.io/vendor/bundle/gems/nokogiri-1.8.4/ext/nokogiri
+current directory: /mnt/c/Users/sourav27/Ubuntu/salockhart.github.io/vendor/bundle/gems/nokogiri-1.8.4/ext/nokogiri
 make "DESTDIR=" install
-/usr/bin/install -c -m 0755 nokogiri.so ./.gem.20180927-15352-10yri6c/nokogiri
+/usr/bin/install -c -m 0755 nokogiri.so ./.gem.20180929-523-1cygdok/nokogiri

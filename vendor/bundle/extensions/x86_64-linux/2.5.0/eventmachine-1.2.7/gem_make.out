@@ -1,16 +1,16 @@
-current directory: /mnt/c/Users/sourav27/Ubuntu/sourav27.github.io/vendor/bundle/gems/eventmachine-1.2.7/ext/fastfilereader
-/usr/bin/ruby2.5 -r ./siteconf20180927-92-1xm630m.rb extconf.rb
+current directory: /mnt/c/Users/sourav27/Ubuntu/salockhart.github.io/vendor/bundle/gems/eventmachine-1.2.7/ext/fastfilereader
+/usr/bin/ruby2.5 -r ./siteconf20180929-523-sdl5vn.rb extconf.rb
 creating Makefile
 
-current directory: /mnt/c/Users/sourav27/Ubuntu/sourav27.github.io/vendor/bundle/gems/eventmachine-1.2.7/ext/fastfilereader
+current directory: /mnt/c/Users/sourav27/Ubuntu/salockhart.github.io/vendor/bundle/gems/eventmachine-1.2.7/ext/fastfilereader
 make "DESTDIR=" clean
 
-current directory: /mnt/c/Users/sourav27/Ubuntu/sourav27.github.io/vendor/bundle/gems/eventmachine-1.2.7/ext/fastfilereader
+current directory: /mnt/c/Users/sourav27/Ubuntu/salockhart.github.io/vendor/bundle/gems/eventmachine-1.2.7/ext/fastfilereader
 make "DESTDIR="
 compiling mapper.cpp
 compiling rubymain.cpp
 linking shared-object fastfilereaderext.so
 
-current directory: /mnt/c/Users/sourav27/Ubuntu/sourav27.github.io/vendor/bundle/gems/eventmachine-1.2.7/ext/fastfilereader
+current directory: /mnt/c/Users/sourav27/Ubuntu/salockhart.github.io/vendor/bundle/gems/eventmachine-1.2.7/ext/fastfilereader
 make "DESTDIR=" install
-/usr/bin/install -c -m 0755 fastfilereaderext.so ./.gem.20180927-92-13xm2
+/usr/bin/install -c -m 0755 fastfilereaderext.so ./.gem.20180929-523-fip64c

@@ -1,11 +1,11 @@
-current directory: /mnt/c/Users/sourav27/Ubuntu/sourav27.github.io/vendor/bundle/gems/commonmarker-0.17.13/ext/commonmarker
-/usr/bin/ruby2.5 -r ./siteconf20180927-92-3ur5j1.rb extconf.rb
+current directory: /mnt/c/Users/sourav27/Ubuntu/salockhart.github.io/vendor/bundle/gems/commonmarker-0.17.13/ext/commonmarker
+/usr/bin/ruby2.5 -r ./siteconf20180929-523-1so03uf.rb extconf.rb
 creating Makefile
 
-current directory: /mnt/c/Users/sourav27/Ubuntu/sourav27.github.io/vendor/bundle/gems/commonmarker-0.17.13/ext/commonmarker
+current directory: /mnt/c/Users/sourav27/Ubuntu/salockhart.github.io/vendor/bundle/gems/commonmarker-0.17.13/ext/commonmarker
 make "DESTDIR=" clean
 
-current directory: /mnt/c/Users/sourav27/Ubuntu/sourav27.github.io/vendor/bundle/gems/commonmarker-0.17.13/ext/commonmarker
+current directory: /mnt/c/Users/sourav27/Ubuntu/salockhart.github.io/vendor/bundle/gems/commonmarker-0.17.13/ext/commonmarker
 make "DESTDIR="
 compiling arena.c
 compiling autolink.c
@@ -55,6 +55,6 @@ compiling utf8.c
 compiling xml.c
 linking shared-object commonmarker/commonmarker.so
 
-current directory: /mnt/c/Users/sourav27/Ubuntu/sourav27.github.io/vendor/bundle/gems/commonmarker-0.17.13/ext/commonmarker
+current directory: /mnt/c/Users/sourav27/Ubuntu/salockhart.github.io/vendor/bundle/gems/commonmarker-0.17.13/ext/commonmarker
 make "DESTDIR=" install
-/usr/bin/install -c -m 0755 commonmarker.so ./.gem.20180927-92-1t2voqe/commonmarker
+/usr/bin/install -c -m 0755 commonmarker.so ./.gem.20180929-523-15trfzg/commonmarker

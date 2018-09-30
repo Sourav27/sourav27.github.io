@@ -31,8 +31,8 @@ rubyhdrdir = $(includedir)/$(RUBY_VERSION_NAME)
 vendorarchdir = $(rubysitearchprefix)/vendor_ruby/$(ruby_version)
 vendorlibdir = $(vendordir)/$(ruby_version)
 vendordir = $(rubylibprefix)/vendor_ruby
-sitearchdir = $(DESTDIR)./.gem.20180927-15352-10yri6c
-sitelibdir = $(DESTDIR)./.gem.20180927-15352-10yri6c
+sitearchdir = $(DESTDIR)./.gem.20180929-523-1cygdok
+sitelibdir = $(DESTDIR)./.gem.20180929-523-1cygdok
 sitedir = $(DESTDIR)/usr/local/lib/site_ruby
 rubyarchdir = $(rubyarchprefix)/$(ruby_version)
 rubylibdir = $(rubylibprefix)/$(ruby_version)
@@ -84,7 +84,7 @@ CCDLFLAGS = -fPIC
 CFLAGS   = $(CCDLFLAGS) -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -fPIC  -g -DXP_UNIX -Wall -Wcast-qual -Wwrite-strings -Wextra -Wmissing-noreturn -Winline -DNOKOGIRI_USE_PACKAGED_LIBRARIES $(ARCH_FLAG)
 INCFLAGS = -I. -I$(arch_hdrdir) -I$(hdrdir)/ruby/backward -I$(hdrdir) -I$(srcdir)
 DEFS     = 
-CPPFLAGS = -DHAVE_XMLPARSEDOC -DHAVE_XSLTPARSESTYLESHEETDOC -DHAVE_EXSLTFUNCREGISTER -DHAVE_XMLHASFEATURE -DHAVE_XMLFIRSTELEMENTCHILD -DHAVE_XMLRELAXNGSETPARSERSTRUCTUREDERRORS -DHAVE_XMLRELAXNGSETPARSERSTRUCTUREDERRORS -DHAVE_XMLRELAXNGSETVALIDSTRUCTUREDERRORS -DHAVE_XMLSCHEMASETVALIDSTRUCTUREDERRORS -DHAVE_XMLSCHEMASETPARSERSTRUCTUREDERRORS -I/mnt/c/Users/sourav27/Ubuntu/sourav27.github.io/vendor/bundle/gems/nokogiri-1.8.4/ports/x86_64-pc-linux-gnu/libxslt/1.1.32/include -I/mnt/c/Users/sourav27/Ubuntu/sourav27.github.io/vendor/bundle/gems/nokogiri-1.8.4/ports/x86_64-pc-linux-gnu/libxml2/2.9.8/include/libxml2 -I/mnt/c/Users/sourav27/Ubuntu/sourav27.github.io/vendor/bundle/gems/nokogiri-1.8.4/ports/x86_64-pc-linux-gnu/libxml2/2.9.8/include/libxml2 -Wdate-time -D_FORTIFY_SOURCE=2 $(DEFS) $(cppflags) "-DNOKOGIRI_LIBXML2_PATH=\"/mnt/c/Users/sourav27/Ubuntu/sourav27.github.io/vendor/bundle/gems/nokogiri-1.8.4/ports/x86_64-pc-linux-gnu/libxml2/2.9.8\"" "-DNOKOGIRI_LIBXML2_PATCHES=\"0001-Revert-Do-not-URI-escape-in-server-side-includes.patch\"" "-DNOKOGIRI_LIBXSLT_PATH=\"/mnt/c/Users/sourav27/Ubuntu/sourav27.github.io/vendor/bundle/gems/nokogiri-1.8.4/ports/x86_64-pc-linux-gnu/libxslt/1.1.32\"" "-DNOKOGIRI_LIBXSLT_PATCHES=\"\""
+CPPFLAGS = -DHAVE_XMLPARSEDOC -DHAVE_XSLTPARSESTYLESHEETDOC -DHAVE_EXSLTFUNCREGISTER -DHAVE_XMLHASFEATURE -DHAVE_XMLFIRSTELEMENTCHILD -DHAVE_XMLRELAXNGSETPARSERSTRUCTUREDERRORS -DHAVE_XMLRELAXNGSETPARSERSTRUCTUREDERRORS -DHAVE_XMLRELAXNGSETVALIDSTRUCTUREDERRORS -DHAVE_XMLSCHEMASETVALIDSTRUCTUREDERRORS -DHAVE_XMLSCHEMASETPARSERSTRUCTUREDERRORS -I/mnt/c/Users/sourav27/Ubuntu/salockhart.github.io/vendor/bundle/gems/nokogiri-1.8.4/ports/x86_64-pc-linux-gnu/libxslt/1.1.32/include -I/mnt/c/Users/sourav27/Ubuntu/salockhart.github.io/vendor/bundle/gems/nokogiri-1.8.4/ports/x86_64-pc-linux-gnu/libxml2/2.9.8/include/libxml2 -I/mnt/c/Users/sourav27/Ubuntu/salockhart.github.io/vendor/bundle/gems/nokogiri-1.8.4/ports/x86_64-pc-linux-gnu/libxml2/2.9.8/include/libxml2 -Wdate-time -D_FORTIFY_SOURCE=2 $(DEFS) $(cppflags) "-DNOKOGIRI_LIBXML2_PATH=\"/mnt/c/Users/sourav27/Ubuntu/salockhart.github.io/vendor/bundle/gems/nokogiri-1.8.4/ports/x86_64-pc-linux-gnu/libxml2/2.9.8\"" "-DNOKOGIRI_LIBXML2_PATCHES=\"0001-Revert-Do-not-URI-escape-in-server-side-includes.patch\"" "-DNOKOGIRI_LIBXSLT_PATH=\"/mnt/c/Users/sourav27/Ubuntu/salockhart.github.io/vendor/bundle/gems/nokogiri-1.8.4/ports/x86_64-pc-linux-gnu/libxslt/1.1.32\"" "-DNOKOGIRI_LIBXSLT_PATCHES=\"\""
 CXXFLAGS = $(CCDLFLAGS) -g -O2 -fstack-protector-strong -Wformat -Werror=format-security $(ARCH_FLAG)
 ldflags  = -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic
 dldflags = -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -Wl,--compress-debug-sections=zlib 
@@ -122,8 +122,8 @@ TOUCH = exit >
 #### End of system configuration section. ####
 
 preload = 
-libpath = . $(archlibdir) /mnt/c/Users/sourav27/Ubuntu/sourav27.github.io/vendor/bundle/gems/nokogiri-1.8.4/ports/x86_64-pc-linux-gnu/libxml2/2.9.8/lib /mnt/c/Users/sourav27/Ubuntu/sourav27.github.io/vendor/bundle/gems/nokogiri-1.8.4/ports/x86_64-pc-linux-gnu/libxslt/1.1.32/lib
-LIBPATH =  -L. -L$(archlibdir) -L/mnt/c/Users/sourav27/Ubuntu/sourav27.github.io/vendor/bundle/gems/nokogiri-1.8.4/ports/x86_64-pc-linux-gnu/libxml2/2.9.8/lib -L/mnt/c/Users/sourav27/Ubuntu/sourav27.github.io/vendor/bundle/gems/nokogiri-1.8.4/ports/x86_64-pc-linux-gnu/libxslt/1.1.32/lib
+libpath = . $(archlibdir) /mnt/c/Users/sourav27/Ubuntu/salockhart.github.io/vendor/bundle/gems/nokogiri-1.8.4/ports/x86_64-pc-linux-gnu/libxml2/2.9.8/lib /mnt/c/Users/sourav27/Ubuntu/salockhart.github.io/vendor/bundle/gems/nokogiri-1.8.4/ports/x86_64-pc-linux-gnu/libxslt/1.1.32/lib
+LIBPATH =  -L. -L$(archlibdir) -L/mnt/c/Users/sourav27/Ubuntu/salockhart.github.io/vendor/bundle/gems/nokogiri-1.8.4/ports/x86_64-pc-linux-gnu/libxml2/2.9.8/lib -L/mnt/c/Users/sourav27/Ubuntu/salockhart.github.io/vendor/bundle/gems/nokogiri-1.8.4/ports/x86_64-pc-linux-gnu/libxslt/1.1.32/lib
 DEFFILE = 
 
 CLEANFILES = mkmf.log
@@ -134,7 +134,7 @@ extout =
 extout_prefix = 
 target_prefix = /nokogiri
 LOCAL_LIBS = 
-LIBS = $(LIBRUBYARG_SHARED) /mnt/c/Users/sourav27/Ubuntu/sourav27.github.io/vendor/bundle/gems/nokogiri-1.8.4/ports/x86_64-pc-linux-gnu/libxslt/1.1.32/lib/libexslt.a -lm -ldl -lz /mnt/c/Users/sourav27/Ubuntu/sourav27.github.io/vendor/bundle/gems/nokogiri-1.8.4/ports/x86_64-pc-linux-gnu/libxml2/2.9.8/lib/libxml2.a /mnt/c/Users/sourav27/Ubuntu/sourav27.github.io/vendor/bundle/gems/nokogiri-1.8.4/ports/x86_64-pc-linux-gnu/libxslt/1.1.32/lib/libxslt.a -ldl -lm -lz /mnt/c/Users/sourav27/Ubuntu/sourav27.github.io/vendor/bundle/gems/nokogiri-1.8.4/ports/x86_64-pc-linux-gnu/libxml2/2.9.8/lib/libxml2.a -lpthread -lgmp -ldl -lcrypt -lm   -lc 
+LIBS = $(LIBRUBYARG_SHARED) /mnt/c/Users/sourav27/Ubuntu/salockhart.github.io/vendor/bundle/gems/nokogiri-1.8.4/ports/x86_64-pc-linux-gnu/libxslt/1.1.32/lib/libexslt.a -lm -ldl -lz /mnt/c/Users/sourav27/Ubuntu/salockhart.github.io/vendor/bundle/gems/nokogiri-1.8.4/ports/x86_64-pc-linux-gnu/libxml2/2.9.8/lib/libxml2.a /mnt/c/Users/sourav27/Ubuntu/salockhart.github.io/vendor/bundle/gems/nokogiri-1.8.4/ports/x86_64-pc-linux-gnu/libxslt/1.1.32/lib/libxslt.a -ldl -lm -lz /mnt/c/Users/sourav27/Ubuntu/salockhart.github.io/vendor/bundle/gems/nokogiri-1.8.4/ports/x86_64-pc-linux-gnu/libxml2/2.9.8/lib/libxml2.a -lpthread -lgmp -ldl -lcrypt -lm   -lc 
 ORIG_SRCS = html_document.c html_element_description.c html_entity_lookup.c html_sax_parser_context.c html_sax_push_parser.c nokogiri.c xml_attr.c xml_attribute_decl.c xml_cdata.c xml_comment.c xml_document.c xml_document_fragment.c xml_dtd.c xml_element_content.c xml_element_decl.c xml_encoding_handler.c xml_entity_decl.c xml_entity_reference.c xml_io.c xml_libxml2_hacks.c xml_namespace.c xml_node.c xml_node_set.c xml_processing_instruction.c xml_reader.c xml_relax_ng.c xml_sax_parser.c xml_sax_parser_context.c xml_sax_push_parser.c xml_schema.c xml_syntax_error.c xml_text.c xml_xpath_context.c xslt_stylesheet.c
 SRCS = $(ORIG_SRCS) 
 OBJS = html_document.o html_element_description.o html_entity_lookup.o html_sax_parser_context.o html_sax_push_parser.o nokogiri.o xml_attr.o xml_attribute_decl.o xml_cdata.o xml_comment.o xml_document.o xml_document_fragment.o xml_dtd.o xml_element_content.o xml_element_decl.o xml_encoding_handler.o xml_entity_decl.o xml_entity_reference.o xml_io.o xml_libxml2_hacks.o xml_namespace.o xml_node.o xml_node_set.o xml_processing_instruction.o xml_reader.o xml_relax_ng.o xml_sax_parser.o xml_sax_parser_context.o xml_sax_push_parser.o xml_schema.o xml_syntax_error.o xml_text.o xml_xpath_context.o xslt_stylesheet.o
