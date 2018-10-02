@@ -21,9 +21,9 @@ google-analytics:
 
 exclude: ['vendor','package.json', 'node_modules']
 
-sass:
-  sass_dir: assets/styles
-  style: compressed
+# sass:
+#   sass_dir: assets/styles
+#   style: compressed
 
 plugins:
   - jekyll-seo-tag
