@@ -11,7 +11,7 @@ $cut: 768px;
 
 // Common
 
-@import url( 'https://fonts.googleapis.com/css?family=Montserrat');
+// @import url( 'https://fonts.googleapis.com/css?family=Montserrat');
 
 body {
     margin: 0;
@@ -85,12 +85,16 @@ sup, sub {
     outline: none;
     text-decoration: none;
     cursor: pointer;
+    -webkit-transition: color 0.3s ease-out, background-color 0.3s ease-out, border-color 0.3s ease-out;
+    -o-transition: color 0.3s ease-out, background-color 0.3s ease-out, border-color 0.3s ease-out;
     transition: color 0.3s ease-out, background-color 0.3s ease-out, border-color 0.3s ease-out;
 
     &:hover {
         background-color: $purple;
         border-color: $purple;
         color: #fff;
+        -webkit-transition: color 0.3s ease-in, background-color 0.3s ease-in, border-color 0.3s ease-in;
+        -o-transition: color 0.3s ease-in, background-color 0.3s ease-in, border-color 0.3s ease-in;
         transition: color 0.3s ease-in, background-color 0.3s ease-in, border-color 0.3s ease-in;
     }
 
@@ -98,6 +102,8 @@ sup, sub {
         background-color: $purple;
         border-color: $purple;
         color: #fff;
+        -webkit-transition: color 0.3s ease-in, background-color 0.3s ease-in, border-color 0.3s ease-in;
+        -o-transition: color 0.3s ease-in, background-color 0.3s ease-in, border-color 0.3s ease-in;
         transition: color 0.3s ease-in, background-color 0.3s ease-in, border-color 0.3s ease-in;
     }
 }
@@ -225,7 +231,8 @@ sup, sub {
       height: 50vw;
       max-width: 350px;
       border-radius: 50%;
-      box-shadow: 0 0 25px rgba(0,0,0,.7);
+      -webkit-box-shadow: 0 0 25px rgba(0,0,0,.7);
+              box-shadow: 0 0 25px rgba(0,0,0,.7);
       vertical-align: middle;
       margin: 0 auto;
       opacity: 1;
@@ -244,7 +251,11 @@ sup, sub {
     left: 50%;
     margin: 0 auto;
     -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: -o-max-content;
     width: max-content;
     .site-title {
         font-size: 2.5rem;
@@ -271,8 +282,12 @@ sup, sub {
 
     .link {
         color: #FFF;
+        display: -webkit-inline-box;
+        display: -ms-inline-flexbox;
         display: inline-flex;
-        justify-content: space-between;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
         text-decoration: none;
         line-height: 1;
         font-size: 15px;
@@ -285,8 +300,12 @@ sup, sub {
 }
 
 .icons-header {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     text-align: center;
 
     .icon {
@@ -299,6 +318,8 @@ sup, sub {
         margin: 2px;
         border-radius: 50%;
         border: 2px solid #FFF;
+        -webkit-transition: all 0.7s;
+        -o-transition: all 0.7s;
         transition: all 0.7s;
 
         &:hover {
@@ -336,7 +357,8 @@ sup, sub {
         top: 50%;
         left: 50%;
         -webkit-transform: translate(-50%, -50%);
-        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
         width: 100px;
         height: 100px;
         fill: #fff;
@@ -369,15 +391,24 @@ sup, sub {
 .user {
   text-align: center;
   font-size: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   p {
     font-size: 16px;
   }
   @media only screen and (min-width: $cut) {
-    flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+       flex-wrap: nowrap;
     font-size: 75px;
   }
 }

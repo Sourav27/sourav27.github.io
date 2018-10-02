@@ -4,7 +4,7 @@ title: "Squiggle Park"
 author: Alex Lockhart
 categories: experience
 tags: [MongoDB, Express.js, React.js, Node.js, Unity3D, Google Cloud Platform]
-image: /img/squigglepark.jpg
+image: /assets/img/squigglepark.jpg
 image_alt: Squiggle Park
 ---
 

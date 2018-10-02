@@ -4,7 +4,7 @@ title: "Clap (As A Service)"
 author: Alex Lockhart
 categories: project
 tags: [Node.js, Bootstrap, Express.js, Heroku, Slack, Github Pages]
-image: /img/clap-as-a-service.png
+image: /assets/img/clap-as-a-service.jpg
 image_alt: clap as a service
 code: https://github.com/salockhart/clap-as-a-service
 demo: http://alexlockhart.ca/clap-as-a-service/

@@ -22,7 +22,7 @@ google-analytics:
 exclude: ['vendor','package.json', 'node_modules']
 
 sass:
-  sass_dir: css
+  sass_dir: assets/styles
   style: compressed
 
 plugins:

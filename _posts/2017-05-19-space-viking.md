@@ -4,7 +4,7 @@ title: "Space Viking"
 author: Alex Lockhart
 categories: project
 tags: [Node.js, React.js]
-image: /img/space-viking.png
+image: /assets/img/space-viking.jpg
 image_alt: space viking
 code: https://github.com/salockhart/SpaceVikingJS
 demo: http://alexlockhart.ca/SpaceVikingJS/
