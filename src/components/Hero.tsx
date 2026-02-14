@@ -1,6 +1,6 @@
 
 import { useRef, useEffect } from 'react';
-import { motion, useMotionValue, useSpring } from 'framer-motion';
+import { motion, useMotionValue } from 'framer-motion';
 import { Github, Linkedin, Twitter } from 'lucide-react';
 
 export const Hero = () => {
@@ -11,10 +11,7 @@ export const Hero = () => {
     const mouseX = useMotionValue(0);
     const mouseY = useMotionValue(0);
 
-    // Smooth spring animation for cursor
-    const springConfig = { damping: 25, stiffness: 120 };
-    const cursorX = useSpring(mouseX, springConfig);
-    const cursorY = useSpring(mouseY, springConfig);
+
 
     useEffect(() => {
         const handleMouseMove = (e: MouseEvent) => {
@@ -51,17 +48,15 @@ export const Hero = () => {
                     </div>
 
                     <div className="flex gap-6 text-stone-300 z-50 pointer-events-auto">
-                        <div className="flex gap-6 text-stone-300 z-50 pointer-events-auto">
-                            <a href="https://linkedin.com/in/souravdebnath" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
-                                <Linkedin size={24} />
-                            </a>
-                            <a href="https://github.com/sourav27" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
-                                <Github size={24} />
-                            </a>
-                            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
-                                <Twitter size={24} />
-                            </a>
-                        </div>
+                        <a href="https://linkedin.com/in/souravdebnath" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+                            <Linkedin size={24} />
+                        </a>
+                        <a href="https://github.com/sourav27" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+                            <Github size={24} />
+                        </a>
+                        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+                            <Twitter size={24} />
+                        </a>
                     </div>
                 </div>
             </div>
@@ -82,8 +77,8 @@ export const Hero = () => {
             <motion.div
                 className="fixed top-0 left-0 w-64 h-64 rounded-full bg-orange-500/10 blur-3xl pointer-events-none z-30 mix-blend-screen"
                 style={{
-                    x: cursorX,
-                    y: cursorY,
+                    x: mouseX,
+                    y: mouseY,
                     translateX: '-50%',
                     translateY: '-50%',
                 }}
@@ -93,8 +88,8 @@ export const Hero = () => {
             <motion.div
                 className="fixed top-0 left-0 w-4 h-4 bg-orange-500 rounded-full pointer-events-none z-50 mix-blend-difference"
                 style={{
-                    x: cursorX,
-                    y: cursorY,
+                    x: mouseX,
+                    y: mouseY,
                     translateX: '-50%',
                     translateY: '-50%',
                 }}
