@@ -24,3 +24,5 @@ dist-ssr
 *.sw?
 .worktrees/
 .ssr-temp
+.agent
+.vscode
