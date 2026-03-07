@@ -87,35 +87,27 @@ export const Hero = () => {
 
         {/* Inline CTAs */}
         <motion.div
-          className="flex gap-8"
+          className="flex flex-wrap gap-8"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.45 }}
         >
-          <a
-            href="https://linkedin.com/in/souravdebnath"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sm text-stone-400 hover:text-stone-100 transition-colors duration-200"
-          >
-            LinkedIn
-          </a>
-          <a
-            href="/resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sm text-stone-400 hover:text-stone-100 transition-colors duration-200"
-          >
-            Resume
-          </a>
-          <a
-            href="https://github.com/sourav27"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sm text-stone-400 hover:text-stone-100 transition-colors duration-200"
-          >
-            GitHub
-          </a>
+          {[
+            { label: 'Resume',   href: '/resume.pdf',                          blank: true  },
+            { label: 'Email',    href: 'mailto:debnath.sourabh@gmail.com',     blank: false },
+            { label: 'LinkedIn', href: 'https://linkedin.com/in/souravdebnath', blank: true  },
+            { label: 'GitHub',   href: 'https://github.com/sourav27',           blank: true  },
+          ].map(({ label, href, blank }) => (
+            <a
+              key={label}
+              href={href}
+              target={blank ? '_blank' : undefined}
+              rel={blank ? 'noopener noreferrer' : undefined}
+              className="text-base text-stone-500 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-100 transition-colors duration-200"
+            >
+              {label}
+            </a>
+          ))}
         </motion.div>
       </div>
 

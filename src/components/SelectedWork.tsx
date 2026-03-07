@@ -72,7 +72,7 @@ export const SelectedWork = () => {
                 {/* Case study CTA */}
                 <a
                   href="#"
-                  className="inline-flex items-center gap-2 text-sm font-mono text-stone-500 dark:text-stone-400 hover:text-orange-500 hover:gap-3 transition-all duration-200"
+                  className="inline-flex items-center gap-2 text-sm font-mono text-stone-500 dark:text-stone-400 hover:text-[#195DE6] hover:gap-3 transition-all duration-200"
                 >
                   View Case Study <span aria-hidden="true">→</span>
                 </a>
