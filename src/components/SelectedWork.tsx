@@ -55,13 +55,13 @@ export const SelectedWork = () => {
 
                 {/* Stats */}
                 {exp.stats && exp.stats.length > 0 && (
-                  <div className="grid grid-cols-3 gap-6 pt-6 border-t border-stone-200 dark:border-stone-800">
+                  <div className="flex flex-wrap gap-x-8 gap-y-6 pt-6 border-t border-stone-200 dark:border-stone-800">
                     {exp.stats.map((stat) => (
-                      <div key={stat.label}>
-                        <div className="text-[40px] md:text-[56px] font-light text-stone-900 dark:text-stone-100 leading-none">
+                      <div key={stat.label} className="min-w-0">
+                        <div className="text-[36px] md:text-[48px] font-light text-stone-900 dark:text-stone-100 leading-none break-all">
                           {stat.value}
                         </div>
-                        <div className="text-[11px] uppercase tracking-widest text-stone-400 dark:text-stone-600 mt-2">
+                        <div className="text-[11px] uppercase tracking-widest text-stone-400 dark:text-stone-600 mt-2 whitespace-nowrap">
                           {stat.label}
                         </div>
                       </div>
