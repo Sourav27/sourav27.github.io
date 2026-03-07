@@ -4,8 +4,11 @@ const SOCIALS = [
   { label: 'Email',     href: 'mailto:debnath.sourabh@gmail.com' },
   { label: 'LinkedIn',  href: 'https://linkedin.com/in/souravdebnath' },
   { label: 'GitHub',    href: 'https://github.com/sourav27' },
-  { label: 'Instagram', href: 'https://instagram.com' },
+  { label: 'Twitter',   href: 'https://twitter.com/souravdebnath27' },
+  { label: 'Substack',  href: 'https://substack.com/@souravdebnath' },
 ];
+
+const VALUE_TAGS = ['Minimalism', 'AI Driven', 'Impact First'];
 
 export const Footer = () => {
   return (
@@ -43,6 +46,15 @@ export const Footer = () => {
             </a>
           ))}
         </motion.div>
+
+        {/* Value tags */}
+        <div className="flex gap-6 mb-12">
+          {VALUE_TAGS.map((tag) => (
+            <span key={tag} className="text-xs font-mono text-stone-600 uppercase tracking-widest">
+              {tag}
+            </span>
+          ))}
+        </div>
 
         {/* Footer bar */}
         <div className="flex justify-between items-center border-t border-stone-800 pt-6">

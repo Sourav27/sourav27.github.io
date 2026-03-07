@@ -69,6 +69,14 @@ export const SelectedWork = () => {
                   </div>
                 )}
 
+                {/* Case study CTA */}
+                <a
+                  href="#"
+                  className="inline-flex items-center gap-2 text-sm font-mono text-stone-400 hover:text-orange-500 hover:gap-3 transition-all duration-200"
+                >
+                  View Case Study <span aria-hidden="true">→</span>
+                </a>
+
                 {/* Skills */}
                 <div className="flex flex-wrap gap-2 pt-2">
                   {exp.skills.map((skill) => (
