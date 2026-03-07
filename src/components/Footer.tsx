@@ -16,15 +16,15 @@ export const Footer = () => {
       <div className="max-w-6xl mx-auto">
 
         {/* CTA */}
-        <motion.p
-          className="text-[clamp(36px,6vw,72px)] font-light text-stone-900 dark:text-stone-100 leading-tight mb-16 max-w-3xl"
+        <motion.h2
+          className="text-[clamp(48px,8vw,88px)] font-normal text-stone-900 dark:text-stone-100 leading-none tracking-tight mb-16 max-w-3xl"
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-50px' }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
         >
-          Let's build something.
-        </motion.p>
+          Let's build<br />something.
+        </motion.h2>
 
         {/* Social links */}
         <motion.div
