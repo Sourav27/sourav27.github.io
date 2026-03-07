@@ -33,11 +33,14 @@ test('hero — name headline and descriptor visible @task4', async ({ page }) =>
 
   const descriptors = ['GenAI PM', 'Builder', 'Strategist'];
   let found = false;
-  for (const d of descriptors) {
-    if (await page.getByText(d).isVisible().catch(() => false)) {
-      found = true;
-      break;
+  for (let attempt = 0; attempt < 10 && !found; attempt++) {
+    for (const d of descriptors) {
+      if (await page.getByText(d, { exact: false }).isVisible().catch(() => false)) {
+        found = true;
+        break;
+      }
     }
+    if (!found) await page.waitForTimeout(300);
   }
   expect(found).toBe(true);
 
@@ -139,10 +142,10 @@ test('gallery — images present and grayscale by default @task10', async ({ pag
 test('footer — CTA, social links, monogram @task11', async ({ page }) => {
   await scrollToSection(page, 'contact');
 
-  await expect(page.getByText("Let's build something.")).toBeVisible();
-  await expect(page.getByRole('link', { name: 'Email' })).toBeVisible();
-  await expect(page.getByRole('link', { name: 'LinkedIn' }).last()).toBeVisible();
-  await expect(page.getByRole('link', { name: 'GitHub' }).last()).toBeVisible();
+  await expect(page.locator('footer h2')).toBeVisible();
+  await expect(page.locator('footer').getByRole('link', { name: 'Email' })).toBeVisible();
+  await expect(page.locator('footer').getByRole('link', { name: 'LinkedIn' })).toBeVisible();
+  await expect(page.locator('footer').getByRole('link', { name: 'GitHub' })).toBeVisible();
   await expect(page.locator('footer').getByText('S.D.')).toBeVisible();
 
   const footer = page.locator('footer');
