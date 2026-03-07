@@ -2,6 +2,8 @@ const ITEMS = [
   'AB InBev',
   'Bain & Company',
   'Vedanta',
+  'Google',
+  'Microsoft',
   'IIT Madras',
   'IIM Bangalore',
 ];
