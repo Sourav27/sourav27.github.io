@@ -31,7 +31,7 @@ Last updated: 2026-03-07
 
 | Task | Status | Notes |
 |---|---|---|
-| Task 3: Rebuild `src/components/Navbar.tsx` | 🔲 todo | |
+| Task 3: Rebuild `src/components/Navbar.tsx` | ✅ done | Monogram S.D., scroll frosted glass, mobile fullscreen overlay, Escape key close |
 
 ---
 
@@ -39,7 +39,7 @@ Last updated: 2026-03-07
 
 | Task | Status | Notes |
 |---|---|---|
-| Task 4: Rebuild `src/components/Hero.tsx` | 🔲 todo | |
+| Task 4: Rebuild `src/components/Hero.tsx` | ✅ done | Name headline, rotating descriptors, stone cursor, scroll indicator, orange removed |
 
 ---
 
@@ -47,7 +47,7 @@ Last updated: 2026-03-07
 
 | Task | Status | Notes |
 |---|---|---|
-| Task 5: Create `src/components/Marquee.tsx` | 🔲 todo | |
+| Task 5: Create `src/components/Marquee.tsx` | ✅ done | CSS-driven infinite scroll, stone-600 text |
 
 ---
 
