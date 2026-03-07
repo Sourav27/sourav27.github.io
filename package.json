@@ -11,7 +11,7 @@
     "test:visual": "playwright test",
     "test:visual:update": "playwright test --update-snapshots",
     "test:visual:report": "playwright show-report",
-    "sync": "tsx scripts/sync-content.ts"
+    "sync": "npx tsx scripts/sync-content.ts"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.18",
