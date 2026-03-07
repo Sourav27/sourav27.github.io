@@ -1,7 +1,5 @@
 import { motion } from 'framer-motion';
-import { loadGallery } from '../lib/content';
-
-const gallery = loadGallery();
+import { gallery } from '../data/gallery';
 
 export const Gallery = () => {
   return (

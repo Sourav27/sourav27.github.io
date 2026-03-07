@@ -1,7 +1,5 @@
 import { motion } from 'framer-motion';
-import { loadExperiences } from '../lib/content';
-
-const experiences = loadExperiences();
+import { experiences } from '../data/experiences';
 
 const fadeUp = {
   initial: { opacity: 0, y: 24 },
