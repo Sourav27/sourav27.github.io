@@ -80,7 +80,7 @@ Last updated: 2026-03-07
 
 | Task | Status | Notes |
 |---|---|---|
-| Task 10: Create `src/data/gallery.ts` + refactor Gallery | 🔲 todo | |
+| Task 10: Create `src/data/gallery.ts` + refactor Gallery | ✅ done | Grayscale default, colour+EXIF on hover, data moved to gallery.ts |
 
 ---
 
@@ -88,7 +88,7 @@ Last updated: 2026-03-07
 
 | Task | Status | Notes |
 |---|---|---|
-| Task 11: Rebuild `src/components/Footer.tsx` | 🔲 todo | |
+| Task 11: Rebuild `src/components/Footer.tsx` | ✅ done | Large CTA, social text links, S.D. monogram |
 
 ---
 
@@ -96,7 +96,7 @@ Last updated: 2026-03-07
 
 | Task | Status | Notes |
 |---|---|---|
-| Task 12: Create `src/components/SEO.tsx` + sitemap + robots | 🔲 todo | |
+| Task 12: Create `src/components/SEO.tsx` + sitemap + robots | ✅ done | OG tags, JSON-LD schema, sitemap.xml, robots.txt |
 
 ---
 
@@ -104,7 +104,7 @@ Last updated: 2026-03-07
 
 | Task | Status | Notes |
 |---|---|---|
-| Task 13: Update `src/pages/Home.tsx` | 🔲 todo | |
+| Task 13: Update `src/pages/Home.tsx` | ✅ done | All sections wired: SEO→Hero→Marquee→About→Work→Achievements→Gallery. Build passes. |
 
 ---
 
