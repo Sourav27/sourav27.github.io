@@ -1,5 +1,7 @@
 import { motion } from 'framer-motion';
-import { achievements } from '../data/achievements';
+import { loadAchievements } from '../lib/content';
+
+const achievements = loadAchievements();
 
 export const Achievements = () => {
   return (
