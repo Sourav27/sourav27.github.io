@@ -1,6 +1,5 @@
 import { Hero } from '../components/Hero';
 import { About } from '../components/About';
-import { VisualResume } from '../components/VisualResume';
 import { Gallery } from '../components/Gallery';
 
 export const Home = () => {
@@ -8,7 +7,6 @@ export const Home = () => {
         <main>
             <Hero />
             <About />
-            <VisualResume />
             <Gallery />
         </main>
     );
