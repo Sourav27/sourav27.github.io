@@ -68,7 +68,7 @@ export const Gallery = () => {
 
         {/* View more on Instagram */}
         <motion.div
-          className="mt-8 flex justify-end"
+          className="mt-8 flex justify-start"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}

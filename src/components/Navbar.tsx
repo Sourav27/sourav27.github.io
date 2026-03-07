@@ -78,7 +78,7 @@ export const Navbar = ({ theme, onToggle }: NavbarProps) => {
             <button
               onClick={onToggle}
               aria-label="Toggle theme"
-              className="w-8 h-8 flex items-center justify-center rounded-full text-stone-500 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-100 transition-colors duration-200"
+              className="w-8 h-8 flex items-center justify-center rounded-full text-stone-500 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-100 transition-colors duration-200 cursor-pointer"
             >
               {theme === 'dark' ? (
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -150,7 +150,7 @@ export const Navbar = ({ theme, onToggle }: NavbarProps) => {
             <motion.button
               onClick={onToggle}
               aria-label="Toggle theme"
-              className="w-10 h-10 flex items-center justify-center rounded-full text-stone-400 dark:text-stone-500 hover:text-stone-700 dark:hover:text-stone-300 transition-colors mt-2"
+              className="w-10 h-10 flex items-center justify-center rounded-full text-stone-400 dark:text-stone-500 hover:text-stone-700 dark:hover:text-stone-300 transition-colors mt-2 cursor-pointer"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.35 }}
