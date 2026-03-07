@@ -1,96 +1,85 @@
-import { useRef, useEffect, useState } from 'react';
-import { motion, useMotionValue, AnimatePresence } from 'framer-motion';
+import { useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
 
-const DESCRIPTORS = ['GenAI PM', 'Builder', 'Strategist'];
+const ROLES = ['GENAI PM', 'BUILDER', 'STRATEGIST'];
+const TYPE_SPEED = 80;
+const DELETE_SPEED = 40;
+const PAUSE_MS = 1800;
+
+function useTypewriter(words: string[]) {
+  const [display, setDisplay] = useState('');
+  const [wordIdx, setWordIdx] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  useEffect(() => {
+    const word = words[wordIdx % words.length];
+    let timeout: ReturnType<typeof setTimeout>;
+
+    if (!isDeleting && display === word) {
+      timeout = setTimeout(() => setIsDeleting(true), PAUSE_MS);
+    } else if (isDeleting && display === '') {
+      setIsDeleting(false);
+      setWordIdx((i) => i + 1);
+    } else {
+      const next = isDeleting
+        ? word.slice(0, display.length - 1)
+        : word.slice(0, display.length + 1);
+      timeout = setTimeout(
+        () => setDisplay(next),
+        isDeleting ? DELETE_SPEED : TYPE_SPEED
+      );
+    }
+    return () => clearTimeout(timeout);
+  }, [display, isDeleting, wordIdx, words]);
+
+  return display;
+}
 
 export const Hero = () => {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const mouseX = useMotionValue(0);
-  const mouseY = useMotionValue(0);
-  const [descriptorIndex, setDescriptorIndex] = useState(0);
-
-  // Mouse tracking for flashlight
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      if (containerRef.current) {
-        const { left, top } = containerRef.current.getBoundingClientRect();
-        const x = e.clientX - left;
-        const y = e.clientY - top;
-        mouseX.set(x);
-        mouseY.set(y);
-        containerRef.current.style.setProperty('--x', `${x}px`);
-        containerRef.current.style.setProperty('--y', `${y}px`);
-      }
-    };
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
-  }, [mouseX, mouseY]);
-
-  // Rotating descriptors — cycle every 2.5s
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setDescriptorIndex((i) => (i + 1) % DESCRIPTORS.length);
-    }, 2500);
-    return () => clearInterval(interval);
-  }, []);
+  const roleText = useTypewriter(ROLES);
 
   return (
-    <div
-      ref={containerRef}
-      className="relative w-full h-screen overflow-hidden bg-stone-950 cursor-none"
-    >
+    <div className="relative w-full h-screen overflow-hidden bg-stone-950">
       {/* Background grid */}
       <div className="absolute inset-0 z-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
-
-      {/* Flashlight glow */}
-      <motion.div
-        className="fixed top-0 left-0 w-64 h-64 rounded-full bg-stone-100/5 blur-3xl pointer-events-none z-30 mix-blend-screen"
-        style={{ x: mouseX, y: mouseY, translateX: '-50%', translateY: '-50%' }}
-      />
-
-      {/* Flashlight overlay mask */}
-      <motion.div
-        className="absolute inset-0 z-20 bg-stone-100/5 mix-blend-overlay pointer-events-none"
-        style={{
-          maskImage: 'radial-gradient(circle 250px at var(--x) var(--y), black, transparent)',
-          WebkitMaskImage: 'radial-gradient(circle 250px at var(--x) var(--y), black, transparent)',
-        }}
-      />
-
-      {/* Sharp cursor dot */}
-      <motion.div
-        className="fixed top-0 left-0 w-3 h-3 bg-stone-100 rounded-full pointer-events-none z-50 mix-blend-difference"
-        style={{ x: mouseX, y: mouseY, translateX: '-50%', translateY: '-50%' }}
-      />
 
       {/* Main content */}
       <div className="absolute inset-0 z-10 flex flex-col justify-center px-8 md:px-16 lg:px-24 max-w-6xl mx-auto">
 
+        {/* Greeting */}
+        <motion.p
+          className="text-[clamp(20px,2.5vw,28px)] font-light text-stone-400 leading-none mb-2"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.1, ease: 'easeOut' }}
+        >
+          Hello! I'm
+        </motion.p>
+
         {/* Name */}
         <motion.h1
-          className="text-[clamp(48px,8vw,88px)] font-light text-stone-100 leading-none tracking-tight mb-4"
+          className="text-[clamp(48px,8vw,88px)] font-bold text-stone-100 leading-none tracking-tight mb-4"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.15, ease: 'easeOut' }}
         >
-          Sourav Debnath
+          Sourav Debnath.
         </motion.h1>
 
-        {/* Rotating descriptor */}
-        <div className="h-9 overflow-hidden mb-8">
-          <AnimatePresence mode="wait">
-            <motion.p
-              key={descriptorIndex}
-              className="text-2xl text-stone-400 font-light"
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -12 }}
-              transition={{ duration: 0.35, delay: 0.3, ease: 'easeOut' }}
-            >
-              {DESCRIPTORS[descriptorIndex]}
-            </motion.p>
-          </AnimatePresence>
-        </div>
+        {/* Typewriter role line */}
+        <motion.p
+          className="text-base md:text-lg font-mono uppercase tracking-widest text-stone-400 mb-8 flex items-center"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+        >
+          I'M A {roleText}
+          <span
+            className="inline-block w-px h-[1.1em] bg-stone-400 ml-0.5 align-middle"
+            style={{ animation: 'blink 1s step-end infinite' }}
+            aria-hidden="true"
+          />
+        </motion.p>
 
         {/* Inline CTAs */}
         <motion.div

@@ -73,3 +73,9 @@ html, body {
   from { transform: translateX(0); }
   to   { transform: translateX(-50%); }
 }
+
+/* ─── Typewriter cursor blink ───────────────────────────────────── */
+@keyframes blink {
+  from, to { opacity: 1; }
+  50%       { opacity: 0; }
+}
