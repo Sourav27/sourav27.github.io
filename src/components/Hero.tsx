@@ -68,7 +68,7 @@ export const Hero = () => {
 
         {/* Typewriter role line */}
         <motion.p
-          className="text-[clamp(20px,2.5vw,28px)] font-normal leading-none mb-8 flex items-center"
+          className="text-[clamp(48px,8vw,88px)] font-normal leading-none mb-8 flex items-center"
           style={{ fontFamily: 'Inter, system-ui, sans-serif', letterSpacing: 'normal' }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}

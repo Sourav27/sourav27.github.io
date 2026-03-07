@@ -10,7 +10,9 @@ function App() {
   useEffect(() => {
     const mq = window.matchMedia('(prefers-color-scheme: dark)');
     setTheme(mq.matches ? 'dark' : 'light');
-    document.documentElement.setAttribute('data-theme', mq.matches ? 'dark' : 'light');
+    const onChange = (e: MediaQueryListEvent) => setTheme(e.matches ? 'dark' : 'light');
+    mq.addEventListener('change', onChange);
+    return () => mq.removeEventListener('change', onChange);
   }, []);
 
   useEffect(() => {
@@ -21,7 +23,7 @@ function App() {
 
   return (
     <HelmetProvider>
-      <div className="min-h-screen font-sans text-stone-100 bg-stone-950">
+      <div className="min-h-screen font-sans text-stone-100 bg-stone-950" data-theme={theme}>
         <Navbar theme={theme} onToggle={toggleTheme} />
         <Home />
         <Footer />
