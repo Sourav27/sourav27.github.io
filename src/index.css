@@ -37,6 +37,8 @@
 
 @import "tailwindcss";
 
+@variant dark (&:where(.dark, .dark *));
+
 /* ─── Design tokens ─────────────────────────────────────────────── */
 [data-theme="dark"] {
   --color-bg-primary:      #0c0a09;

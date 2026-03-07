@@ -3,11 +3,11 @@ import { gallery } from '../data/gallery';
 
 export const Gallery = () => {
   return (
-    <section id="gallery" className="py-24 md:py-32 bg-stone-950">
+    <section id="gallery" className="py-24 md:py-32 bg-white dark:bg-stone-950">
       <div className="max-w-6xl mx-auto px-6">
 
         <motion.h2
-          className="text-5xl font-semibold text-stone-100 mb-12"
+          className="text-5xl font-semibold text-stone-900 dark:text-stone-100 mb-12"
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-50px' }}

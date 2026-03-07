@@ -10,11 +10,11 @@ const fadeUp = {
 
 export const SelectedWork = () => {
   return (
-    <section id="work" className="py-24 md:py-32 bg-stone-950">
+    <section id="work" className="py-24 md:py-32 bg-white dark:bg-stone-950">
       <div className="max-w-6xl mx-auto px-6">
 
         <motion.h2
-          className="text-5xl font-semibold text-stone-100 mb-20"
+          className="text-5xl font-semibold text-stone-900 dark:text-stone-100 mb-20"
           {...fadeUp}
         >
           Selected Work
@@ -26,7 +26,7 @@ export const SelectedWork = () => {
               key={exp.id}
               className={`relative group flex flex-col ${
                 index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
-              } gap-0 border border-stone-800 rounded-lg overflow-hidden hover:border-stone-700 transition-colors duration-200`}
+              } gap-0 border border-stone-200 dark:border-stone-800 rounded-lg overflow-hidden hover:border-stone-300 dark:hover:border-stone-700 transition-colors duration-200`}
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-50px' }}
@@ -39,29 +39,29 @@ export const SelectedWork = () => {
               {/* Content */}
               <div className="flex-1 p-10 md:p-12 space-y-6">
                 {/* Label */}
-                <p className="text-[11px] uppercase tracking-widest text-stone-600">
+                <p className="text-[11px] uppercase tracking-widest text-stone-400 dark:text-stone-600">
                   {exp.company} · {exp.period}
                 </p>
 
                 {/* Role */}
-                <h3 className="text-3xl md:text-4xl font-light text-stone-100 leading-tight">
+                <h3 className="text-3xl md:text-4xl font-light text-stone-900 dark:text-stone-100 leading-tight">
                   {exp.role}
                 </h3>
 
                 {/* Description */}
-                <p className="text-base text-stone-400 leading-relaxed max-w-lg">
+                <p className="text-base text-stone-600 dark:text-stone-400 leading-relaxed max-w-lg">
                   {exp.description}
                 </p>
 
                 {/* Stats */}
                 {exp.stats && exp.stats.length > 0 && (
-                  <div className="grid grid-cols-3 gap-6 pt-6 border-t border-stone-800">
+                  <div className="grid grid-cols-3 gap-6 pt-6 border-t border-stone-200 dark:border-stone-800">
                     {exp.stats.map((stat) => (
                       <div key={stat.label}>
-                        <div className="text-[40px] md:text-[56px] font-light text-stone-100 leading-none">
+                        <div className="text-[40px] md:text-[56px] font-light text-stone-900 dark:text-stone-100 leading-none">
                           {stat.value}
                         </div>
-                        <div className="text-[11px] uppercase tracking-widest text-stone-600 mt-2">
+                        <div className="text-[11px] uppercase tracking-widest text-stone-400 dark:text-stone-600 mt-2">
                           {stat.label}
                         </div>
                       </div>
@@ -72,7 +72,7 @@ export const SelectedWork = () => {
                 {/* Case study CTA */}
                 <a
                   href="#"
-                  className="inline-flex items-center gap-2 text-sm font-mono text-stone-400 hover:text-orange-500 hover:gap-3 transition-all duration-200"
+                  className="inline-flex items-center gap-2 text-sm font-mono text-stone-500 dark:text-stone-400 hover:text-orange-500 hover:gap-3 transition-all duration-200"
                 >
                   View Case Study <span aria-hidden="true">→</span>
                 </a>
@@ -82,7 +82,7 @@ export const SelectedWork = () => {
                   {exp.skills.map((skill) => (
                     <span
                       key={skill}
-                      className="px-3 py-1 border border-stone-800 rounded-full text-[11px] uppercase tracking-widest text-stone-600 hover:border-stone-600 hover:text-stone-400 transition-colors duration-200"
+                      className="px-3 py-1 border border-stone-200 dark:border-stone-800 rounded-full text-[11px] uppercase tracking-widest text-stone-400 dark:text-stone-600 hover:border-stone-400 dark:hover:border-stone-600 hover:text-stone-700 dark:hover:text-stone-400 transition-colors duration-200"
                     >
                       {skill}
                     </span>
@@ -91,17 +91,17 @@ export const SelectedWork = () => {
 
                 {/* Testimonial */}
                 {exp.testimonial && (
-                  <div className="pt-6 border-t border-stone-800">
-                    <p className="text-sm text-stone-400 italic leading-relaxed mb-3">
+                  <div className="pt-6 border-t border-stone-200 dark:border-stone-800">
+                    <p className="text-sm text-stone-600 dark:text-stone-400 italic leading-relaxed mb-3">
                       "{exp.testimonial.text}"
                     </p>
                     <div className="flex items-center gap-3">
-                      <div className="w-6 h-6 rounded-full bg-stone-800 flex items-center justify-center text-[10px] text-stone-400 font-medium">
+                      <div className="w-6 h-6 rounded-full bg-stone-200 dark:bg-stone-800 flex items-center justify-center text-[10px] text-stone-600 dark:text-stone-400 font-medium">
                         {exp.testimonial.author[0]}
                       </div>
                       <div>
-                        <p className="text-xs text-stone-300 font-medium">{exp.testimonial.author}</p>
-                        <p className="text-xs text-stone-600">{exp.testimonial.role}</p>
+                        <p className="text-xs text-stone-700 dark:text-stone-300 font-medium">{exp.testimonial.author}</p>
+                        <p className="text-xs text-stone-400 dark:text-stone-600">{exp.testimonial.role}</p>
                       </div>
                     </div>
                   </div>
@@ -109,7 +109,7 @@ export const SelectedWork = () => {
               </div>
 
               {/* Image */}
-              <div className="flex-1 min-h-[280px] md:min-h-0 relative overflow-hidden bg-stone-900">
+              <div className="flex-1 min-h-[280px] md:min-h-0 relative overflow-hidden bg-stone-100 dark:bg-stone-900">
                 {exp.image ? (
                   <img
                     src={exp.image}
@@ -118,7 +118,7 @@ export const SelectedWork = () => {
                   />
                 ) : (
                   <div className="w-full h-full flex items-center justify-center">
-                    <span className="text-stone-800 text-8xl font-light">
+                    <span className="text-stone-300 dark:text-stone-800 text-8xl font-light">
                       {exp.company[0]}
                     </span>
                   </div>

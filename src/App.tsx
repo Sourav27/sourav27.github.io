@@ -16,6 +16,7 @@ function App() {
   }, []);
 
   useEffect(() => {
+    document.documentElement.classList.toggle('dark', theme === 'dark');
     document.documentElement.setAttribute('data-theme', theme);
   }, [theme]);
 
@@ -23,7 +24,7 @@ function App() {
 
   return (
     <HelmetProvider>
-      <div className="min-h-screen font-sans text-stone-100 bg-stone-950" data-theme={theme}>
+      <div className="min-h-screen font-sans bg-white text-stone-900 dark:bg-stone-950 dark:text-stone-100">
         <Navbar theme={theme} onToggle={toggleTheme} />
         <Home />
         <Footer />

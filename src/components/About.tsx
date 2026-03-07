@@ -35,11 +35,11 @@ const fadeUp = {
 
 export const About = () => {
   return (
-    <section id="about" className="py-24 md:py-32 bg-stone-900">
+    <section id="about" className="py-24 md:py-32 bg-stone-100 dark:bg-stone-900">
       <div className="max-w-6xl mx-auto px-6">
 
         <motion.h2
-          className="text-5xl font-semibold text-stone-100 mb-16"
+          className="text-5xl font-semibold text-stone-900 dark:text-stone-100 mb-16"
           {...fadeUp}
           transition={{ duration: 0.6, ease: 'easeOut' }}
         >
@@ -50,7 +50,7 @@ export const About = () => {
 
           {/* Left — bio */}
           <motion.div
-            className="space-y-5 text-lg text-stone-400 leading-relaxed"
+            className="space-y-5 text-lg text-stone-600 dark:text-stone-400 leading-relaxed"
             {...fadeUp}
             transition={{ duration: 0.6, delay: 0.15, ease: 'easeOut' }}
           >
@@ -60,13 +60,13 @@ export const About = () => {
             </p>
             <p>
               Currently leading Generative AI initiatives at{' '}
-              <span className="text-stone-100">AB InBev</span> — building products that
+              <span className="text-stone-900 dark:text-stone-100">AB InBev</span> — building products that
               help the world's largest brewer make faster, smarter decisions.
             </p>
             <p>
               My background combines technical depth from{' '}
-              <span className="text-stone-100">IIT Madras</span> with strategic business
-              acumen from <span className="text-stone-100">IIM Bangalore</span>.
+              <span className="text-stone-900 dark:text-stone-100">IIT Madras</span> with strategic business
+              acumen from <span className="text-stone-900 dark:text-stone-100">IIM Bangalore</span>.
             </p>
           </motion.div>
 
@@ -77,11 +77,11 @@ export const About = () => {
             transition={{ duration: 0.6, delay: 0.3, ease: 'easeOut' }}
           >
             {/* Stats */}
-            <div className="grid grid-cols-3 gap-4 pb-10 border-b border-stone-800">
+            <div className="grid grid-cols-3 gap-4 pb-10 border-b border-stone-200 dark:border-stone-800">
               {STATS.map((stat) => (
                 <div key={stat.label}>
-                  <div className="text-3xl font-light text-stone-100">{stat.value}</div>
-                  <div className="text-[11px] uppercase tracking-widest text-stone-600 mt-1">
+                  <div className="text-3xl font-light text-stone-900 dark:text-stone-100">{stat.value}</div>
+                  <div className="text-[11px] uppercase tracking-widest text-stone-400 dark:text-stone-600 mt-1">
                     {stat.label}
                   </div>
                 </div>
@@ -90,16 +90,16 @@ export const About = () => {
 
             {/* Education */}
             <div className="space-y-4">
-              <p className="text-[11px] uppercase tracking-widest text-stone-600">Education</p>
+              <p className="text-[11px] uppercase tracking-widest text-stone-400 dark:text-stone-600">Education</p>
               {EDUCATION.map((edu) => (
                 <div key={edu.institution} className="flex justify-between items-start">
                   <div>
                     <p className="text-stone-100 text-sm font-medium">{edu.institution}</p>
-                    <p className="text-stone-500 text-xs mt-0.5">{edu.degree}</p>
+                    <p className="text-stone-500 dark:text-stone-500 text-xs mt-0.5">{edu.degree}</p>
                   </div>
                   <div className="text-right shrink-0 ml-4">
                     <p className="text-stone-500 text-xs">{edu.period}</p>
-                    <p className="text-stone-600 text-xs">GPA {edu.gpa}</p>
+                    <p className="text-stone-400 dark:text-stone-600 text-xs">GPA {edu.gpa}</p>
                   </div>
                 </div>
               ))}
@@ -107,14 +107,14 @@ export const About = () => {
 
             {/* Competencies */}
             <div>
-              <p className="text-[11px] uppercase tracking-widest text-stone-600 mb-3">
+              <p className="text-[11px] uppercase tracking-widest text-stone-400 dark:text-stone-600 mb-3">
                 Competencies
               </p>
               <div className="flex flex-wrap gap-2">
                 {COMPETENCIES.map((tag) => (
                   <span
                     key={tag}
-                    className="px-3 py-1 border border-stone-800 rounded-full text-[11px] uppercase tracking-widest text-stone-600 hover:border-stone-600 hover:text-stone-400 transition-colors duration-200 cursor-default"
+                    className="px-3 py-1 border border-stone-200 dark:border-stone-800 rounded-full text-[11px] uppercase tracking-widest text-stone-400 dark:text-stone-600 hover:border-stone-400 dark:hover:border-stone-600 hover:text-stone-700 dark:hover:text-stone-400 transition-colors duration-200 cursor-default"
                   >
                     {tag}
                   </span>
