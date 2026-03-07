@@ -55,7 +55,7 @@ Last updated: 2026-03-07
 
 | Task | Status | Notes |
 |---|---|---|
-| Task 6: Refactor `src/components/About.tsx` | 🔲 todo | |
+| Task 6: Refactor `src/components/About.tsx` | ✅ done | Two-col layout, stats, education, competency pills, orange removed |
 
 ---
 
@@ -63,7 +63,7 @@ Last updated: 2026-03-07
 
 | Task | Status | Notes |
 |---|---|---|
-| Task 7: Rename VisualResume → SelectedWork | 🔲 todo | |
+| Task 7: Rename VisualResume → SelectedWork | ✅ done | SelectedWork.tsx created, VisualResume.tsx deleted, Home.tsx updated |
 
 ---
 
@@ -71,8 +71,8 @@ Last updated: 2026-03-07
 
 | Task | Status | Notes |
 |---|---|---|
-| Task 8: Create `src/data/achievements.ts` | 🔲 todo | |
-| Task 9: Create `src/components/Achievements.tsx` | 🔲 todo | |
+| Task 8: Create `src/data/achievements.ts` | ✅ done | 7 achievements with name/context/metric/year |
+| Task 9: Create `src/components/Achievements.tsx` | ✅ done | Staggered table layout, 7 rows |
 
 ---
 
