@@ -1,15 +1,23 @@
+import { SEO } from '../components/SEO';
 import { Hero } from '../components/Hero';
+import { Marquee } from '../components/Marquee';
 import { About } from '../components/About';
-import { VisualResume } from '../components/VisualResume';
+import { SelectedWork } from '../components/SelectedWork';
+import { Achievements } from '../components/Achievements';
+import { AISection } from '../components/AISection';
 import { Gallery } from '../components/Gallery';
 
 export const Home = () => {
-    return (
-        <main>
-            <Hero />
-            <About />
-            <VisualResume />
-            <Gallery />
-        </main>
-    );
+  return (
+    <main>
+      <SEO />
+      <Hero />
+      <Marquee />
+      <About />
+      <SelectedWork />
+      <Achievements />
+      <AISection />
+      <Gallery />
+    </main>
+  );
 };

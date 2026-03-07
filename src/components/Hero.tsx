@@ -1,100 +1,135 @@
+import { useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
 
-import { useRef, useEffect } from 'react';
-import { motion, useMotionValue } from 'framer-motion';
-import { Github, Linkedin, Twitter } from 'lucide-react';
+const ROLES = ['GENAI PM', 'BUILDER', 'STRATEGIST'];
+const TYPE_SPEED = 80;
+const DELETE_SPEED = 40;
+const PAUSE_MS = 1800;
+
+function useTypewriter(words: string[]) {
+  const [display, setDisplay] = useState('');
+  const [wordIdx, setWordIdx] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  useEffect(() => {
+    const word = words[wordIdx % words.length];
+    let timeout: ReturnType<typeof setTimeout>;
+
+    if (!isDeleting && display === word) {
+      timeout = setTimeout(() => setIsDeleting(true), PAUSE_MS);
+    } else if (isDeleting && display === '') {
+      setIsDeleting(false);
+      setWordIdx((i) => i + 1);
+    } else {
+      const next = isDeleting
+        ? word.slice(0, display.length - 1)
+        : word.slice(0, display.length + 1);
+      timeout = setTimeout(
+        () => setDisplay(next),
+        isDeleting ? DELETE_SPEED : TYPE_SPEED
+      );
+    }
+    return () => clearTimeout(timeout);
+  }, [display, isDeleting, wordIdx, words]);
+
+  return display;
+}
 
 export const Hero = () => {
-    const containerRef = useRef<HTMLDivElement>(null);
+  const roleText = useTypewriter(ROLES);
 
+  return (
+    <div className="relative w-full h-screen overflow-hidden bg-stone-950">
+      {/* Background grid */}
+      <div className="absolute inset-0 z-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
 
-    // Mouse position
-    const mouseX = useMotionValue(0);
-    const mouseY = useMotionValue(0);
+      {/* Main content */}
+      <div className="absolute inset-0 z-10 flex flex-col justify-center px-8 md:px-16 lg:px-24 max-w-6xl mx-auto">
 
-
-
-    useEffect(() => {
-        const handleMouseMove = (e: MouseEvent) => {
-            if (containerRef.current) {
-                const { left, top } = containerRef.current.getBoundingClientRect();
-                const x = e.clientX - left;
-                const y = e.clientY - top;
-                mouseX.set(x);
-                mouseY.set(y);
-                containerRef.current.style.setProperty('--x', `${x}px`);
-                containerRef.current.style.setProperty('--y', `${y}px`);
-            }
-        };
-
-        window.addEventListener('mousemove', handleMouseMove);
-        return () => window.removeEventListener('mousemove', handleMouseMove);
-    }, [mouseX, mouseY]);
-
-    return (
-        <div
-            ref={containerRef}
-            className="relative w-full h-screen overflow-hidden bg-stone-950 cursor-none"
+        {/* Greeting */}
+        <motion.p
+          className="text-[clamp(20px,2.5vw,28px)] font-light text-stone-400 leading-none mb-2"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.1, ease: 'easeOut' }}
         >
-            {/* Background Grid */}
-            <div className="absolute inset-0 z-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+          Hello! I'm
+        </motion.p>
 
-            {/* Main Content Layer (Visible by default) */}
-            <div className="absolute inset-0 z-10 flex flex-col justify-end p-12 pointer-events-none">
+        {/* Name */}
+        <motion.h1
+          className="text-[clamp(48px,8vw,88px)] font-bold text-stone-100 leading-none tracking-tight mb-4"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.15, ease: 'easeOut' }}
+        >
+          Sourav Debnath.
+        </motion.h1>
 
-                <div className="flex justify-between items-end mix-blend-difference">
-                    <div className="text-xl md:text-2xl font-light tracking-wide text-stone-300">
-                        Senior Product Manager<br />
-                        <span className="text-stone-500">Generative AI & Digital Transformation</span>
-                    </div>
+        {/* Typewriter role line */}
+        <motion.p
+          className="text-base md:text-lg font-mono uppercase tracking-widest text-stone-400 mb-8 flex items-center"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+        >
+          I'M A {roleText}
+          <span
+            className="inline-block w-px h-[1.1em] bg-stone-400 ml-0.5 align-middle"
+            style={{ animation: 'blink 1s step-end infinite' }}
+            aria-hidden="true"
+          />
+        </motion.p>
 
-                    <div className="flex gap-6 text-stone-300 z-50 pointer-events-auto">
-                        <a href="https://linkedin.com/in/souravdebnath" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
-                            <Linkedin size={24} />
-                        </a>
-                        <a href="https://github.com/sourav27" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
-                            <Github size={24} />
-                        </a>
-                        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
-                            <Twitter size={24} />
-                        </a>
-                    </div>
-                </div>
-            </div>
+        {/* Inline CTAs */}
+        <motion.div
+          className="flex gap-8"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.45 }}
+        >
+          <a
+            href="https://linkedin.com/in/souravdebnath"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm text-stone-400 hover:text-stone-100 transition-colors duration-200"
+          >
+            LinkedIn
+          </a>
+          <a
+            href="/resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm text-stone-400 hover:text-stone-100 transition-colors duration-200"
+          >
+            Resume
+          </a>
+          <a
+            href="https://github.com/sourav27"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm text-stone-400 hover:text-stone-100 transition-colors duration-200"
+          >
+            GitHub
+          </a>
+        </motion.div>
+      </div>
 
-            {/* Mask Layer (Revealed by Flashlight) */}
-            <motion.div
-                className="absolute inset-0 z-20 bg-orange-600 mix-blend-overlay pointer-events-none"
-                style={{
-                    maskImage: 'radial-gradient(circle 250px at var(--x) var(--y), black, transparent)',
-                    WebkitMaskImage: 'radial-gradient(circle 250px at var(--x) var(--y), black, transparent)',
-                }}
-            >
-                {/* Detailed/Tech version of image or content could go here in future iteration */}
-                <div className="w-full h-full opacity-20 bg-[url('https://grainy-gradients.vercel.app/noise.svg')]"></div>
-            </motion.div>
-
-            {/* Flashlight Cursor */}
-            <motion.div
-                className="fixed top-0 left-0 w-64 h-64 rounded-full bg-orange-500/10 blur-3xl pointer-events-none z-30 mix-blend-screen"
-                style={{
-                    x: mouseX,
-                    y: mouseY,
-                    translateX: '-50%',
-                    translateY: '-50%',
-                }}
-            />
-
-            {/* Sharp Cursor Dot */}
-            <motion.div
-                className="fixed top-0 left-0 w-4 h-4 bg-orange-500 rounded-full pointer-events-none z-50 mix-blend-difference"
-                style={{
-                    x: mouseX,
-                    y: mouseY,
-                    translateX: '-50%',
-                    translateY: '-50%',
-                }}
-            />
-
-        </div>
-    );
+      {/* Scroll indicator */}
+      <motion.div
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-1"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1, duration: 0.6 }}
+      >
+        <motion.div
+          className="w-px h-10 bg-stone-700"
+          animate={{ scaleY: [1, 0.4, 1] }}
+          transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
+          style={{ originY: 0 }}
+        />
+        <span className="text-[10px] uppercase tracking-widest text-stone-600">scroll</span>
+      </motion.div>
+    </div>
+  );
 };

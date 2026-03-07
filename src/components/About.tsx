@@ -1,69 +1,129 @@
-
 import { motion } from 'framer-motion';
 
+const STATS = [
+  { value: '5.5+', label: 'Years Experience' },
+  { value: '3+',   label: 'Products Launched' },
+  { value: '500+', label: 'Peak MAU' },
+];
+
+const EDUCATION = [
+  {
+    institution: 'IIM Bangalore',
+    degree: 'MBA, General Management',
+    period: '2022–24',
+    gpa: '3.2/4.0',
+  },
+  {
+    institution: 'IIT Madras',
+    degree: 'B.Tech Honours, Mechanical Engineering',
+    period: '2014–18',
+    gpa: '8.9/10.0',
+  },
+];
+
+const COMPETENCIES = [
+  'Product Leadership', 'Generative AI', 'Agentic Workflows',
+  'RAG', 'Digital Transformation', 'User Research',
+  'Context Engineering', 'MLOps',
+];
+
+const fadeUp = {
+  initial: { opacity: 0, y: 24 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true, margin: '-50px' },
+};
+
 export const About = () => {
-    return (
-        <section id="about" className="py-24 px-8 md:px-12 bg-stone-900 text-stone-300">
-            <div className="max-w-4xl mx-auto">
-                <motion.h2
-                    className="text-4xl md:text-5xl font-serif font-bold mb-12 text-stone-100"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                >
-                    About Me
-                </motion.h2>
+  return (
+    <section id="about" className="py-24 md:py-32 bg-stone-900">
+      <div className="max-w-6xl mx-auto px-6">
 
-                <div className="grid md:grid-cols-2 gap-12">
-                    <motion.div
-                        className="space-y-6 text-lg leading-relaxed"
-                        initial={{ opacity: 0, x: -20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.2 }}
-                    >
-                        <p>
-                            I am a <span className="text-orange-500 font-semibold">Senior Product Manager</span> with over 5.5 years of experience building and launching AI and traditional products from zero to scale.
-                        </p>
-                        <p>
-                            Currently leading Generative AI initiatives at <span className="text-stone-100">AB InBev</span>, I specialize in navigating user ambiguity and delivering data-backed quality in high-velocity environments.
-                        </p>
-                        <p>
-                            My background matches technical depth from <span className="text-stone-100">IIT Madras</span> with strategic business acumen from <span className="text-stone-100">IIM Bangalore</span>.
-                        </p>
-                    </motion.div>
+        <motion.h2
+          className="text-5xl font-semibold text-stone-100 mb-16"
+          {...fadeUp}
+          transition={{ duration: 0.6, ease: 'easeOut' }}
+        >
+          About
+        </motion.h2>
 
-                    <motion.div
-                        className="space-y-8"
-                        initial={{ opacity: 0, x: 20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.4 }}
-                    >
-                        <div>
-                            <h3 className="text-xl font-bold text-stone-100 mb-4">Core Competencies</h3>
-                            <div className="flex flex-wrap gap-2">
-                                {['Product Leadership', 'Generative AI', 'Agentic Workflows', 'RAG', 'Digital Transformation', 'User Research'].map((skill) => (
-                                    <span key={skill} className="px-3 py-1 bg-stone-800 rounded-full text-sm hover:bg-orange-500/20 hover:text-orange-500 transition-colors cursor-default">
-                                        {skill}
-                                    </span>
-                                ))}
-                            </div>
-                        </div>
+        <div className="grid md:grid-cols-2 gap-16">
 
-                        <div>
-                            <h3 className="text-xl font-bold text-stone-100 mb-4">Tech Stack</h3>
-                            <div className="flex flex-wrap gap-2">
-                                {['Azure Cloud', 'SQL', 'Python', 'React', 'Tailwind', 'LangChain', 'ChromaDB'].map((tech) => (
-                                    <span key={tech} className="px-3 py-1 border border-stone-700 rounded-full text-sm text-stone-400">
-                                        {tech}
-                                    </span>
-                                ))}
-                            </div>
-                        </div>
-                    </motion.div>
+          {/* Left — bio */}
+          <motion.div
+            className="space-y-5 text-lg text-stone-400 leading-relaxed"
+            {...fadeUp}
+            transition={{ duration: 0.6, delay: 0.15, ease: 'easeOut' }}
+          >
+            <p>
+              Senior Product Manager with 5.5+ years of experience building and launching
+              AI and traditional products from zero to scale.
+            </p>
+            <p>
+              Currently leading Generative AI initiatives at{' '}
+              <span className="text-stone-100">AB InBev</span> — building products that
+              help the world's largest brewer make faster, smarter decisions.
+            </p>
+            <p>
+              My background combines technical depth from{' '}
+              <span className="text-stone-100">IIT Madras</span> with strategic business
+              acumen from <span className="text-stone-100">IIM Bangalore</span>.
+            </p>
+          </motion.div>
+
+          {/* Right — stats, education, competencies */}
+          <motion.div
+            className="space-y-10"
+            {...fadeUp}
+            transition={{ duration: 0.6, delay: 0.3, ease: 'easeOut' }}
+          >
+            {/* Stats */}
+            <div className="grid grid-cols-3 gap-4 pb-10 border-b border-stone-800">
+              {STATS.map((stat) => (
+                <div key={stat.label}>
+                  <div className="text-3xl font-light text-stone-100">{stat.value}</div>
+                  <div className="text-[11px] uppercase tracking-widest text-stone-600 mt-1">
+                    {stat.label}
+                  </div>
                 </div>
+              ))}
             </div>
-        </section>
-    );
+
+            {/* Education */}
+            <div className="space-y-4">
+              <p className="text-[11px] uppercase tracking-widest text-stone-600">Education</p>
+              {EDUCATION.map((edu) => (
+                <div key={edu.institution} className="flex justify-between items-start">
+                  <div>
+                    <p className="text-stone-100 text-sm font-medium">{edu.institution}</p>
+                    <p className="text-stone-500 text-xs mt-0.5">{edu.degree}</p>
+                  </div>
+                  <div className="text-right shrink-0 ml-4">
+                    <p className="text-stone-500 text-xs">{edu.period}</p>
+                    <p className="text-stone-600 text-xs">GPA {edu.gpa}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Competencies */}
+            <div>
+              <p className="text-[11px] uppercase tracking-widest text-stone-600 mb-3">
+                Competencies
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {COMPETENCIES.map((tag) => (
+                  <span
+                    key={tag}
+                    className="px-3 py-1 border border-stone-800 rounded-full text-[11px] uppercase tracking-widest text-stone-600 hover:border-stone-600 hover:text-stone-400 transition-colors duration-200 cursor-default"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
 };
