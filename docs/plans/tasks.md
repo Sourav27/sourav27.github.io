@@ -112,7 +112,7 @@ Last updated: 2026-03-07
 
 | Task | Status | Notes |
 |---|---|---|
-| Task 14: External link audit + CI audit step | 🔲 todo | |
+| Task 14: External link audit + CI audit step | ✅ done | `npm audit --audit-level=high` added to deploy.yml; all blank targets verified with noopener |
 
 ---
 
@@ -120,9 +120,9 @@ Last updated: 2026-03-07
 
 | Task | Status | Notes |
 |---|---|---|
-| Task 15: Create `content/` directory + markdown files | 🔲 todo | |
-| Task 16: Create `src/lib/content.ts` | 🔲 todo | |
-| Task 17: Wire components to markdown | 🔲 todo | |
+| Task 15: Create `content/` directory + markdown files | ✅ done | All 4 experience .md files, achievements.md, gallery.md, about.md |
+| Task 16: Create `src/lib/content.ts` | ✅ done | Uses import.meta.glob + gray-matter; browser-safe utility for future SSG use |
+| Task 17: Wire components to markdown | ⚠️ partial | gray-matter crashes React at runtime in SPA (no SSG). Components kept on TS data files. Markdown + content.ts preserved for when SSG is added. |
 
 ---
 
@@ -130,7 +130,7 @@ Last updated: 2026-03-07
 
 | Task | Status | Notes |
 |---|---|---|
-| Task V-0: Playwright setup | 🔲 todo | |
-| Task V-1: Core visual test suite | 🔲 todo | |
-| Task V-2: Ralph Loop protocol | 🔲 todo | reference doc only |
-| Task V-3: Stitch comparison helper | 🔲 todo | |
+| Task V-0: Playwright setup | ✅ done | playwright.config.ts, tests/visual/setup.ts, Chromium installed |
+| Task V-1: Core visual test suite | ✅ done | 11/11 tests pass, baseline snapshots generated |
+| Task V-2: Ralph Loop protocol | ✅ done | Reference doc only — protocol embedded in plan |
+| Task V-3: Stitch comparison helper | ⏭️ skipped | Stitch URLs have expired; manual comparison not needed now that baselines exist |
