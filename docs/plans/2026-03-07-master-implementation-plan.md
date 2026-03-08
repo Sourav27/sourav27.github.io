@@ -16,10 +16,10 @@ Read these files first — they are the source of truth for every decision:
 
 | File | Purpose |
 |---|---|
-| `context/portfolio-design.md` | Design spec: palette, typography, every component's CSS |
-| `context/implementation-plan.md` | UI redesign task list with interaction standards |
-| `context/inspiration.md` | Edwin Le animation patterns (load sequence, scroll entry) |
-| `context/sourav-resume-2026.md` | Real content — all copy must match this exactly |
+| `docs/context/portfolio-design.md` | Design spec: palette, typography, every component's CSS |
+| `docs/docs/plans/implementation-plan.md` | UI redesign task list with interaction standards |
+| `docs/context/inspiration.md` | Edwin Le animation patterns (load sequence, scroll entry) |
+| `docs/docs/context/sourav-resume-2026.md` | Real content — all copy must match this exactly |
 | `docs/plans/2026-03-07-seo-content-security-design.md` | SEO/content/security decisions |
 
 **Invariants — never break these:**

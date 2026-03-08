@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { experiences } from '../data/experiences';
 
@@ -7,6 +8,43 @@ const fadeUp = {
   viewport: { once: true, margin: '-50px' },
   transition: { duration: 0.6, ease: 'easeOut' as const },
 };
+
+function LogoOrName({ src, company }: { src: string; company: string }) {
+  const [broken, setBroken] = useState(false);
+  if (broken) {
+    return <span className="text-[11px] uppercase tracking-widest text-stone-400 dark:text-stone-600">{company}</span>;
+  }
+  return (
+    <img
+      src={src}
+      alt={company}
+      onError={() => setBroken(true)}
+      className="h-5 w-auto object-contain brightness-0 opacity-40 dark:invert dark:opacity-40"
+    />
+  );
+}
+
+function CardImage({ src, role, company }: { src?: string; role: string; company: string }) {
+  const [broken, setBroken] = useState(false);
+  return (
+    <div className="flex-1 min-h-[280px] md:min-h-0 relative overflow-hidden bg-stone-100 dark:bg-stone-900">
+      {src && !broken ? (
+        <img
+          src={src}
+          alt={role}
+          onError={() => setBroken(true)}
+          className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-105"
+        />
+      ) : (
+        <div className="w-full h-full flex items-center justify-center">
+          <span className="text-stone-300 dark:text-stone-800 text-8xl font-light">
+            {company[0]}
+          </span>
+        </div>
+      )}
+    </div>
+  );
+}
 
 export const SelectedWork = () => {
   return (
@@ -39,9 +77,10 @@ export const SelectedWork = () => {
               {/* Content */}
               <div className="flex-1 p-6 md:p-10 lg:p-12 space-y-6">
                 {/* Label */}
-                <p className="text-[11px] uppercase tracking-widest text-stone-400 dark:text-stone-600">
-                  {exp.company} · {exp.period}
-                </p>
+                <div className="flex items-center gap-3">
+                  <LogoOrName src={exp.logo} company={exp.company} />
+                  <span className="text-[11px] uppercase tracking-widest text-stone-400 dark:text-stone-600">· {exp.period}</span>
+                </div>
 
                 {/* Role */}
                 <h3 className="text-3xl md:text-4xl font-light text-stone-900 dark:text-stone-100 leading-tight">
@@ -109,21 +148,7 @@ export const SelectedWork = () => {
               </div>
 
               {/* Image */}
-              <div className="flex-1 min-h-[280px] md:min-h-0 relative overflow-hidden bg-stone-100 dark:bg-stone-900">
-                {exp.image ? (
-                  <img
-                    src={exp.image}
-                    alt={exp.role}
-                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-105"
-                  />
-                ) : (
-                  <div className="w-full h-full flex items-center justify-center">
-                    <span className="text-stone-300 dark:text-stone-800 text-8xl font-light">
-                      {exp.company[0]}
-                    </span>
-                  </div>
-                )}
-              </div>
+              <CardImage src={exp.image} role={exp.role} company={exp.company} />
             </motion.div>
           ))}
         </div>

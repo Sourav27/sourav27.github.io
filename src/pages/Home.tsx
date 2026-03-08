@@ -4,7 +4,7 @@ import { Marquee } from '../components/Marquee';
 import { About } from '../components/About';
 import { SelectedWork } from '../components/SelectedWork';
 import { Achievements } from '../components/Achievements';
-import { AISection } from '../components/AISection';
+import { PersonalStatement } from '../components/PersonalStatement';
 import { Gallery } from '../components/Gallery';
 
 export const Home = () => {
@@ -16,7 +16,7 @@ export const Home = () => {
       <About />
       <SelectedWork />
       <Achievements />
-      <AISection />
+      <PersonalStatement />
       <Gallery />
     </main>
   );

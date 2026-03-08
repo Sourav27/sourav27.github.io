@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react';
 import { motion, useScroll, useTransform, useMotionValueEvent } from 'framer-motion';
 
-const QUOTE = 'Passionate about shaping the future of AI through user-centric design thinking.';
+const QUOTE = 'I am passionate about shaping the future of AI keeping the user needs first.';
 const WORDS = QUOTE.split(' ');
 
 export const AISection = () => {
@@ -14,9 +14,9 @@ export const AISection = () => {
   });
 
   useMotionValueEvent(scrollYProgress, 'change', (progress) => {
-    // Highlight words across the middle 60% of scroll range (0.2 → 0.8)
+    // Highlight words across the middle 40% of scroll range (0.3 → 0.7)
     // so words start lighting up once section is well in view
-    const adjusted = Math.max(0, (progress - 0.2) / 0.6);
+    const adjusted = Math.max(0, (progress - 0.2) / 0.4);
     setLitCount(Math.round(adjusted * WORDS.length));
   });
 
@@ -25,27 +25,29 @@ export const AISection = () => {
   return (
     <section
       ref={sectionRef}
-      className="bg-white dark:bg-stone-950 py-24 md:py-32 px-8 md:px-16 lg:px-24"
+      className="bg-white dark:bg-stone-950 py-24 md:py-32 px-8 md:px-16 lg:px-24 overflow-hidden"
     >
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-16 items-center">
 
         {/* Text — left */}
-        <div className="flex-1 flex flex-col gap-6">
+        <div className="flex-1 flex flex-col gap-6 min-w-0 self-stretch">
           <span className="text-xs uppercase tracking-widest text-stone-500">
             Personal Statement
           </span>
           <p className="text-3xl md:text-4xl font-light leading-relaxed">
             {WORDS.map((word, i) => (
-              <span
-                key={i}
-                className={[
-                  'transition-colors duration-300 mr-[0.3em]',
-                  i < litCount
-                    ? 'text-stone-900 dark:text-stone-100'
-                    : 'text-stone-400 dark:text-stone-500',
-                ].join(' ')}
-              >
-                {word}
+              <span key={i}>
+                <span
+                  className={[
+                    'transition-colors duration-300',
+                    i < litCount
+                      ? 'text-stone-900 dark:text-stone-100'
+                      : 'text-stone-400 dark:text-stone-500',
+                  ].join(' ')}
+                >
+                  {word}
+                </span>
+                {i < WORDS.length - 1 ? ' ' : ''}
               </span>
             ))}
           </p>

@@ -37,7 +37,7 @@ export interface ExperienceItem {
   location: string;
   description: string;
   logo: string;
-  image?: string;
+  image: string;
   stats: { label: string; value: string }[];
   skills: string[];
   testimonial?: {
@@ -99,8 +99,28 @@ export const gallery: GalleryItem[] = ${JSON.stringify(items, null, 2)};
   console.log(`✓ gallery.ts — ${items.length} items`);
 }
 
+// ── Personal Statement ────────────────────────────────────────────────
+function syncPersonalStatement() {
+  const raw = readFileSync(join(CONTENT, 'personal-statement.md'), 'utf-8');
+  const { data } = matter(raw);
+
+  const out = `// AUTO-GENERATED — edit content/personal-statement.md and run npm run sync
+export interface PersonalStatementData {
+  quote: string;
+  image: string;
+  imageAlt: string;
+}
+
+export const personalStatement: PersonalStatementData = ${JSON.stringify(data, null, 2)};
+`;
+
+  writeFileSync(join(DATA, 'personal-statement.ts'), out, 'utf-8');
+  console.log('✓ personal-statement.ts');
+}
+
 // ── Run ──────────────────────────────────────────────────────────────
 syncExperiences();
 syncAchievements();
 syncGallery();
+syncPersonalStatement();
 console.log('\nSync complete. Run npm run build to deploy changes.');

@@ -1,7 +1,7 @@
 # Design: SEO, Markdown Content Pipeline & Security
 **Date**: 2026-03-07
 **Status**: Approved
-**Scope**: Additive to `context/implementation-plan.md` (UI redesign plan)
+**Scope**: Additive to `docs/docs/plans/implementation-plan.md` (UI redesign plan)
 
 ---
 

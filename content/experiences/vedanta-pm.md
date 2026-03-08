@@ -4,8 +4,8 @@ role: Product Manager
 company: Vedanta Resources
 period: Oct 2020 – May 2022
 location: Mumbai
-image: /images/experiences/vedanta-pm.jpg
-logo: /images/logos/vedanta.svg
+image: /images/experiences/insights-copilot.png
+logo: /images/logos/vedanta_mono.svg
 stats:
   - label: Transaction Vol
     value: "$5B+"

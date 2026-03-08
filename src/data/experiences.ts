@@ -7,7 +7,7 @@ export interface ExperienceItem {
   location: string;
   description: string;
   logo: string;
-  image?: string;
+  image: string;
   stats: { label: string; value: string }[];
   skills: string[];
   testimonial?: {
@@ -25,7 +25,7 @@ export const experiences: ExperienceItem[] = [
     "company": "AB InBev",
     "period": "May 2024 – Present",
     "location": "Bengaluru",
-    "image": "/images/experiences/ab-inbev.jpg",
+    "image": "/images/experiences/insights-copilot.png",
     "logo": "/images/logos/ab-inbev.svg",
     "stats": [
       {
@@ -60,7 +60,8 @@ export const experiences: ExperienceItem[] = [
     "company": "Bain & Company",
     "period": "Apr 2023 – Jun 2023",
     "location": "Mumbai",
-    "logo": "/images/logos/bain.svg",
+    "logo": "/images/logos/bain_mono.svg",
+    "image": "/images/experiences/bain.png",
     "stats": [
       {
         "label": "Market Impact",
@@ -84,8 +85,8 @@ export const experiences: ExperienceItem[] = [
     "company": "Vedanta Resources",
     "period": "Oct 2020 – May 2022",
     "location": "Mumbai",
-    "image": "/images/experiences/vedanta-pm.jpg",
-    "logo": "/images/logos/vedanta.svg",
+    "image": "/images/experiences/insights-copilot.png",
+    "logo": "/images/logos/vedanta_mono.svg",
     "stats": [
       {
         "label": "Transaction Vol",
@@ -118,7 +119,8 @@ export const experiences: ExperienceItem[] = [
     "company": "Vedanta Resources",
     "period": "Jul 2018 – Sep 2020",
     "location": "New Delhi",
-    "logo": "/images/logos/vedanta.svg",
+    "logo": "/images/logos/vedanta_mono.svg",
+    "image": "/images/experiences/vedanta-ai.png",
     "stats": [
       {
         "label": "Profit Accrual",

@@ -4,7 +4,8 @@ role: Smart Manufacturing & AI Lead
 company: Vedanta Resources
 period: Jul 2018 – Sep 2020
 location: New Delhi
-logo: /images/logos/vedanta.svg
+logo: /images/logos/vedanta_mono.svg
+image: /images/experiences/vedanta-ai.png
 stats:
   - label: Profit Accrual
     value: "$250M+"

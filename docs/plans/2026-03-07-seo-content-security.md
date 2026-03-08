@@ -9,7 +9,7 @@
 **Tech Stack:** vite-ssg, react-helmet-async, gray-matter, vite-plugin-content (or vite glob imports), Inter + JetBrains Mono woff2 (self-hosted)
 
 **Design doc:** `docs/plans/2026-03-07-seo-content-security-design.md`
-**UI redesign plan:** `context/implementation-plan.md`
+**UI redesign plan:** `docs/docs/plans/implementation-plan.md`
 
 ---
 
