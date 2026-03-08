@@ -32,11 +32,12 @@ function useTypewriter(words: string[]) {
     return () => clearTimeout(timeout);
   }, [display, isDeleting, wordIdx, words]);
 
-  return display;
+  return { display, wordIdx };
 }
 
 export const Hero = () => {
-  const roleText = useTypewriter(ROLES);
+  const { display: roleText, wordIdx } = useTypewriter(ROLES);
+  const isHighlighted = wordIdx % ROLES.length === 0;
 
   return (
     <div className="relative w-full h-screen overflow-hidden bg-white dark:bg-stone-950">
@@ -75,7 +76,7 @@ export const Hero = () => {
           transition={{ duration: 0.5, delay: 0.4 }}
         >
           <span className="text-stone-500 dark:text-stone-400">I'm a&nbsp;</span>
-          <span className={roleText.startsWith('GenAI') ? 'text-stone-900 dark:text-stone-100' : 'text-stone-500 dark:text-stone-400'}>
+          <span className={isHighlighted ? 'text-stone-900 dark:text-stone-100' : 'text-stone-500 dark:text-stone-400'}>
             {roleText}
           </span>
           <span
