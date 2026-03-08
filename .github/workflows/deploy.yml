@@ -34,6 +34,9 @@ jobs:
       - name: Audit dependencies
         run: npm audit --audit-level=high
 
+      - name: Sync content
+        run: npm run sync
+
       - name: Build
         run: npm run build
 
