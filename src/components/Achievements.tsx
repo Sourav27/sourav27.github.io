@@ -7,7 +7,7 @@ export const Achievements = () => {
       <div className="max-w-6xl mx-auto px-6">
 
         <motion.h2
-          className="text-5xl font-semibold text-stone-900 dark:text-stone-100 mb-16"
+          className="text-4xl md:text-5xl font-semibold text-stone-900 dark:text-stone-100 mb-16"
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-50px' }}
@@ -38,9 +38,18 @@ export const Achievements = () => {
             <span className="text-base text-stone-900 dark:text-stone-100 group-hover:text-stone-900 dark:group-hover:text-stone-100 transition-colors">
               {item.name}
             </span>
-            <span className="text-base text-stone-600 dark:text-stone-400">{item.context}</span>
-            <span className="text-base text-stone-600 dark:text-stone-400">{item.metric}</span>
-            <span className="text-base text-stone-400 dark:text-stone-600 md:text-right">{item.year}</span>
+            <span className="text-base text-stone-600 dark:text-stone-400">
+              <span className="md:hidden text-[10px] uppercase tracking-widest text-stone-400 dark:text-stone-600 block mb-0.5">Context</span>
+              {item.context}
+            </span>
+            <span className="text-base text-stone-600 dark:text-stone-400">
+              <span className="md:hidden text-[10px] uppercase tracking-widest text-stone-400 dark:text-stone-600 block mb-0.5">Metric</span>
+              {item.metric}
+            </span>
+            <span className="text-base text-stone-400 dark:text-stone-600 md:text-right">
+              <span className="md:hidden text-[10px] uppercase tracking-widest text-stone-400 dark:text-stone-600 block mb-0.5">Year</span>
+              {item.year}
+            </span>
           </motion.div>
         ))}
       </div>

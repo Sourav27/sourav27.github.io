@@ -14,7 +14,7 @@ export const SelectedWork = () => {
       <div className="max-w-6xl mx-auto px-6">
 
         <motion.h2
-          className="text-5xl font-semibold text-stone-900 dark:text-stone-100 mb-20"
+          className="text-4xl md:text-5xl font-semibold text-stone-900 dark:text-stone-100 mb-20"
           {...fadeUp}
         >
           Selected Work
@@ -37,7 +37,7 @@ export const SelectedWork = () => {
               <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-[0.03] transition-opacity duration-200 pointer-events-none z-10 mix-blend-difference" />
 
               {/* Content */}
-              <div className="flex-1 p-10 md:p-12 space-y-6">
+              <div className="flex-1 p-6 md:p-10 lg:p-12 space-y-6">
                 {/* Label */}
                 <p className="text-[11px] uppercase tracking-widest text-stone-400 dark:text-stone-600">
                   {exp.company} · {exp.period}

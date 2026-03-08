@@ -48,7 +48,7 @@ export const Footer = () => {
         </motion.div>
 
         {/* Value tags */}
-        <div className="flex gap-6 mb-12">
+        <div className="flex flex-wrap gap-6 mb-12">
           {VALUE_TAGS.map((tag) => (
             <span key={tag} className="text-xs font-mono text-stone-400 dark:text-stone-600 uppercase tracking-widest">
               {tag}
@@ -57,7 +57,7 @@ export const Footer = () => {
         </div>
 
         {/* Footer bar */}
-        <div className="flex justify-between items-center border-t border-stone-200 dark:border-stone-800 pt-6">
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-t border-stone-200 dark:border-stone-800 pt-6">
           <span className="text-sm font-medium text-stone-400 dark:text-stone-600">S.D.</span>
           <div className="flex items-center gap-6">
             <span className="text-xs text-stone-400 dark:text-stone-600">

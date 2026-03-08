@@ -32,11 +32,12 @@ function useTypewriter(words: string[]) {
     return () => clearTimeout(timeout);
   }, [display, isDeleting, wordIdx, words]);
 
-  return display;
+  return { display, wordIdx };
 }
 
 export const Hero = () => {
-  const roleText = useTypewriter(ROLES);
+  const { display: roleText, wordIdx } = useTypewriter(ROLES);
+  const isHighlighted = wordIdx % ROLES.length === 0;
 
   return (
     <div className="relative w-full h-screen overflow-hidden bg-white dark:bg-stone-950">
@@ -48,7 +49,7 @@ export const Hero = () => {
 
         {/* Greeting */}
         <motion.p
-          className="text-[clamp(48px,8vw,88px)] font-normal text-stone-500 dark:text-stone-400 leading-none mb-2"
+          className="text-[clamp(36px,8vw,88px)] font-normal text-stone-500 dark:text-stone-400 leading-none mb-2"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1, ease: 'easeOut' }}
@@ -58,7 +59,7 @@ export const Hero = () => {
 
         {/* Name */}
         <motion.h1
-          className="text-[clamp(48px,8vw,88px)] font-normal text-stone-900 dark:text-stone-100 leading-none tracking-tight mb-4"
+          className="text-[clamp(36px,8vw,88px)] font-normal text-stone-900 dark:text-stone-100 leading-none tracking-tight mb-4"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.15, ease: 'easeOut' }}
@@ -68,14 +69,14 @@ export const Hero = () => {
 
         {/* Typewriter role line */}
         <motion.p
-          className="text-[clamp(48px,8vw,88px)] font-normal leading-none mb-8 flex items-center"
+          className="text-[clamp(36px,8vw,88px)] font-normal leading-none mb-8"
           style={{ fontFamily: 'Inter, system-ui, sans-serif', letterSpacing: 'normal' }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.4 }}
         >
           <span className="text-stone-500 dark:text-stone-400">I'm a&nbsp;</span>
-          <span className={roleText.startsWith('GenAI') ? 'text-stone-900 dark:text-stone-100' : 'text-stone-500 dark:text-stone-400'}>
+          <span className={isHighlighted ? 'text-stone-900 dark:text-stone-100' : 'text-stone-500 dark:text-stone-400'}>
             {roleText}
           </span>
           <span
