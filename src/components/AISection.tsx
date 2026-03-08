@@ -1,9 +1,24 @@
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
+import { useScroll, useMotionValueEvent } from 'framer-motion';
 
 const QUOTE = 'Passionate about shaping the future of AI through user-centric design thinking.';
+const WORDS = QUOTE.split(' ');
 
 export const AISection = () => {
   const sectionRef = useRef<HTMLElement>(null);
+  const [litCount, setLitCount] = useState(0);
+
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ['start end', 'end start'],
+  });
+
+  useMotionValueEvent(scrollYProgress, 'change', (progress) => {
+    // Highlight words across the middle 60% of scroll range (0.2 → 0.8)
+    // so words start lighting up once section is well in view
+    const adjusted = Math.max(0, (progress - 0.2) / 0.6);
+    setLitCount(Math.round(adjusted * WORDS.length));
+  });
 
   return (
     <section
@@ -17,8 +32,20 @@ export const AISection = () => {
           <span className="text-xs uppercase tracking-widest text-stone-500">
             Personal Statement
           </span>
-          <p className="text-3xl md:text-4xl font-light leading-relaxed text-stone-500 dark:text-stone-500">
-            {QUOTE}
+          <p className="text-3xl md:text-4xl font-light leading-relaxed">
+            {WORDS.map((word, i) => (
+              <span
+                key={i}
+                className={[
+                  'transition-colors duration-300 mr-[0.3em]',
+                  i < litCount
+                    ? 'text-stone-900 dark:text-stone-100'
+                    : 'text-stone-400 dark:text-stone-500',
+                ].join(' ')}
+              >
+                {word}
+              </span>
+            ))}
           </p>
         </div>
 
