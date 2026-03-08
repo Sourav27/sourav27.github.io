@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react';
-import { useScroll, useMotionValueEvent } from 'framer-motion';
+import { motion, useScroll, useTransform, useMotionValueEvent } from 'framer-motion';
 
 const QUOTE = 'Passionate about shaping the future of AI through user-centric design thinking.';
 const WORDS = QUOTE.split(' ');
@@ -19,6 +19,8 @@ export const AISection = () => {
     const adjusted = Math.max(0, (progress - 0.2) / 0.6);
     setLitCount(Math.round(adjusted * WORDS.length));
   });
+
+  const imageY = useTransform(scrollYProgress, [0, 1], ['0px', '-40px']);
 
   return (
     <section
@@ -50,7 +52,10 @@ export const AISection = () => {
         </div>
 
         {/* Portrait — right */}
-        <div className="flex-shrink-0 p-2 rounded-full bg-stone-200 dark:bg-stone-800 ring-1 ring-stone-300 dark:ring-stone-700">
+        <motion.div
+          style={{ y: imageY }}
+          className="flex-shrink-0 p-2 rounded-full bg-stone-200 dark:bg-stone-800 ring-1 ring-stone-300 dark:ring-stone-700"
+        >
           <div className="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden">
             <img
               src="/images/SDPasspic.jpg"
@@ -58,7 +63,7 @@ export const AISection = () => {
               className="w-full h-full object-cover"
             />
           </div>
-        </div>
+        </motion.div>
 
       </div>
     </section>
