@@ -75,16 +75,14 @@ export const Hero = () => {
           transition={{ duration: 0.5, delay: 0.4 }}
         >
           <span className="text-stone-500 dark:text-stone-400">I'm a&nbsp;</span>
-          <span className="inline-flex items-center">
-            <span className={roleText.startsWith('GenAI') ? 'text-stone-900 dark:text-stone-100' : 'text-stone-500 dark:text-stone-400'}>
-              {roleText}
-            </span>
-            <span
-              className="inline-block w-px h-[1.1em] bg-stone-500 dark:bg-stone-400 ml-0.5 align-middle"
-              style={{ animation: 'blink 1s step-end infinite' }}
-              aria-hidden="true"
-            />
+          <span className={roleText.startsWith('GenAI') ? 'text-stone-900 dark:text-stone-100' : 'text-stone-500 dark:text-stone-400'}>
+            {roleText}
           </span>
+          <span
+            className="inline-block w-px h-[1.1em] bg-stone-500 dark:bg-stone-400 ml-0.5 align-middle"
+            style={{ animation: 'blink 1s step-end infinite' }}
+            aria-hidden="true"
+          />
         </motion.p>
 
         {/* Inline CTAs */}
