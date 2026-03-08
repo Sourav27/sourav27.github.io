@@ -7,7 +7,7 @@ export const Achievements = () => {
       <div className="max-w-6xl mx-auto px-6">
 
         <motion.h2
-          className="text-5xl font-semibold text-stone-900 dark:text-stone-100 mb-16"
+          className="text-4xl md:text-5xl font-semibold text-stone-900 dark:text-stone-100 mb-16"
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-50px' }}

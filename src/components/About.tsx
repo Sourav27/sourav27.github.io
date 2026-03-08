@@ -39,7 +39,7 @@ export const About = () => {
       <div className="max-w-6xl mx-auto px-6">
 
         <motion.h2
-          className="text-5xl font-semibold text-stone-900 dark:text-stone-100 mb-16"
+          className="text-4xl md:text-5xl font-semibold text-stone-900 dark:text-stone-100 mb-16"
           {...fadeUp}
           transition={{ duration: 0.6, ease: 'easeOut' }}
         >

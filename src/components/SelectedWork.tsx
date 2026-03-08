@@ -14,7 +14,7 @@ export const SelectedWork = () => {
       <div className="max-w-6xl mx-auto px-6">
 
         <motion.h2
-          className="text-5xl font-semibold text-stone-900 dark:text-stone-100 mb-20"
+          className="text-4xl md:text-5xl font-semibold text-stone-900 dark:text-stone-100 mb-20"
           {...fadeUp}
         >
           Selected Work
