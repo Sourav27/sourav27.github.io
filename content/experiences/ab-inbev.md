@@ -4,7 +4,7 @@ role: Senior Product Manager
 company: AB InBev
 period: May 2024 – Present
 location: Bengaluru
-image: /images/experiences/ab-inbev.jpg
+image: /images/experiences/insights-copilot.png
 logo: /images/logos/ab-inbev.svg
 stats:
   - label: MAU Growth

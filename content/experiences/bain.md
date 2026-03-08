@@ -4,7 +4,8 @@ role: Summer Associate
 company: Bain & Company
 period: Apr 2023 – Jun 2023
 location: Mumbai
-logo: /images/logos/bain.svg
+logo: /images/logos/bain_mono.svg
+image: /images/experiences/bain.png
 stats:
   - label: Market Impact
     value: "$10B+"

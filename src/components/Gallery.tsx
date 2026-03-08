@@ -35,7 +35,7 @@ export const Gallery = () => {
           {/* Large image — left, full height */}
           {gallery[0] && (
             <motion.div
-              className="relative aspect-[3/4] overflow-hidden group rounded-lg cursor-pointer"
+              className="relative min-h-[400px] overflow-hidden group rounded-lg cursor-pointer"
               onTouchStart={() => handleTouchStart(0)}
               onTouchEnd={handleTouchEnd}
               onTouchCancel={handleTouchEnd}
@@ -47,7 +47,7 @@ export const Gallery = () => {
               <img
                 src={gallery[0].src}
                 alt={gallery[0].alt}
-                className={`w-full h-full object-cover transition-all duration-500 ease-out group-hover:scale-105 ${
+                className={`w-full h-full object-contain transition-all duration-500 ease-out group-hover:scale-105 ${
                   activeIdx === 0 ? 'grayscale-0 scale-105' : 'grayscale group-hover:grayscale-0'
                 }`}
               />

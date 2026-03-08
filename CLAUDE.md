@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Personal portfolio website for **Sourav Debnath** (single-page). For any content work, always review `context/sourav-resume-2026.md` for accurate personal details, experience, education, skills, and awards. built with React 19, TypeScript, Vite, and Tailwind CSS v4. Deployed to GitHub Pages via GitHub Actions. **Design is intentionally in flux** — the visual direction is still being explored, so keep implementations flexible and avoid hardcoding aesthetic decisions.
+Personal portfolio website for **Sourav Debnath** (single-page). For any content work, always review `docs/context/sourav-resume-2026.md` for accurate personal details, experience, education, skills, and awards. built with React 19, TypeScript, Vite, and Tailwind CSS v4. Deployed to GitHub Pages via GitHub Actions. **Design is intentionally in flux** — the visual direction is still being explored, so keep implementations flexible and avoid hardcoding aesthetic decisions.
 
 ## Development Commands
 
