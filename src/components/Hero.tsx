@@ -40,7 +40,7 @@ export const Hero = () => {
   const isHighlighted = wordIdx % ROLES.length === 0;
 
   return (
-    <div className="relative w-full h-screen overflow-hidden bg-white dark:bg-stone-950">
+    <div className="relative w-full h-[100svh] overflow-hidden bg-white dark:bg-stone-950">
       {/* Background grid */}
       <div className="absolute inset-0 z-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
 
