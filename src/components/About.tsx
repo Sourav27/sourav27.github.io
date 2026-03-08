@@ -92,12 +92,12 @@ export const About = () => {
             <div className="space-y-4">
               <p className="text-[11px] uppercase tracking-widest text-stone-400 dark:text-stone-600">Education</p>
               {EDUCATION.map((edu) => (
-                <div key={edu.institution} className="flex justify-between items-start">
-                  <div>
+                <div key={edu.institution} className="flex justify-between items-start gap-4">
+                  <div className="min-w-0">
                     <p className="text-stone-100 text-sm font-medium">{edu.institution}</p>
-                    <p className="text-stone-500 dark:text-stone-500 text-xs mt-0.5">{edu.degree}</p>
+                    <p className="text-stone-500 dark:text-stone-500 text-xs mt-0.5 leading-relaxed">{edu.degree}</p>
                   </div>
-                  <div className="text-right shrink-0 ml-4">
+                  <div className="text-right shrink-0">
                     <p className="text-stone-500 text-xs">{edu.period}</p>
                     <p className="text-stone-400 dark:text-stone-600 text-xs">GPA {edu.gpa}</p>
                   </div>

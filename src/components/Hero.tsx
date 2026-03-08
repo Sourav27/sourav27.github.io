@@ -48,7 +48,7 @@ export const Hero = () => {
 
         {/* Greeting */}
         <motion.p
-          className="text-[clamp(48px,8vw,88px)] font-normal text-stone-500 dark:text-stone-400 leading-none mb-2"
+          className="text-[clamp(36px,8vw,88px)] font-normal text-stone-500 dark:text-stone-400 leading-none mb-2"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1, ease: 'easeOut' }}
@@ -58,7 +58,7 @@ export const Hero = () => {
 
         {/* Name */}
         <motion.h1
-          className="text-[clamp(48px,8vw,88px)] font-normal text-stone-900 dark:text-stone-100 leading-none tracking-tight mb-4"
+          className="text-[clamp(36px,8vw,88px)] font-normal text-stone-900 dark:text-stone-100 leading-none tracking-tight mb-4"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.15, ease: 'easeOut' }}
@@ -68,21 +68,23 @@ export const Hero = () => {
 
         {/* Typewriter role line */}
         <motion.p
-          className="text-[clamp(48px,8vw,88px)] font-normal leading-none mb-8 flex items-center"
+          className="text-[clamp(36px,8vw,88px)] font-normal leading-none mb-8"
           style={{ fontFamily: 'Inter, system-ui, sans-serif', letterSpacing: 'normal' }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.4 }}
         >
           <span className="text-stone-500 dark:text-stone-400">I'm a&nbsp;</span>
-          <span className={roleText.startsWith('GenAI') ? 'text-stone-900 dark:text-stone-100' : 'text-stone-500 dark:text-stone-400'}>
-            {roleText}
+          <span className="inline-flex items-center">
+            <span className={roleText.startsWith('GenAI') ? 'text-stone-900 dark:text-stone-100' : 'text-stone-500 dark:text-stone-400'}>
+              {roleText}
+            </span>
+            <span
+              className="inline-block w-px h-[1.1em] bg-stone-500 dark:bg-stone-400 ml-0.5 align-middle"
+              style={{ animation: 'blink 1s step-end infinite' }}
+              aria-hidden="true"
+            />
           </span>
-          <span
-            className="inline-block w-px h-[1.1em] bg-stone-500 dark:bg-stone-400 ml-0.5 align-middle"
-            style={{ animation: 'blink 1s step-end infinite' }}
-            aria-hidden="true"
-          />
         </motion.p>
 
         {/* Inline CTAs */}
