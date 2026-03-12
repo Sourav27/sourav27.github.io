@@ -19,7 +19,7 @@
 
 ## Content Pipeline
 - Resume-driven content updates: `sourav-resume-2026.md` is the single source of truth
-- Any change to the resume markdown should trigger a first-draft proposal for all affected website content (About, VisualResume, Hero, etc.)
+- Any change to the resume markdown should trigger a first-draft proposal for all affected website content (About, Selected Work, Hero, etc.)
 - Automate or semi-automate this with a script or CI step that diffs the resume and proposes content changes
 
 ## Selected Work / Case Studies
