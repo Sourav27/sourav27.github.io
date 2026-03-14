@@ -25,25 +25,21 @@ export const PersonalStatement = () => {
   return (
     <section
       ref={sectionRef}
-      className="bg-white dark:bg-stone-950 py-24 md:py-32 px-8 md:px-16 lg:px-24 overflow-hidden"
+      className="py-24 md:py-32 px-8 md:px-16 lg:px-24 overflow-hidden" style={{ backgroundColor: 'var(--color-bg-primary)' }}
     >
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-16 items-center">
 
         {/* Text — left */}
         <div className="flex-1 flex flex-col gap-6 min-w-0 self-stretch">
-          <span className="text-xs uppercase tracking-widest text-stone-500">
+          <span className="text-xs uppercase tracking-widest" style={{ color: 'var(--color-text-muted)' }}>
             Personal Statement
           </span>
           <p className="text-3xl md:text-4xl font-light leading-relaxed">
             {WORDS.map((word, i) => (
               <span key={i}>
                 <span
-                  className={[
-                    'transition-colors duration-300',
-                    i < litCount
-                      ? 'text-stone-900 dark:text-stone-100'
-                      : 'text-stone-400 dark:text-stone-500',
-                  ].join(' ')}
+                  className="transition-colors duration-300"
+                  style={{ color: i < litCount ? 'var(--color-text-primary)' : 'var(--color-text-muted)' }}
                 >
                   {word}
                 </span>
@@ -55,8 +51,8 @@ export const PersonalStatement = () => {
 
         {/* Portrait — right */}
         <motion.div
-          style={{ y: imageY }}
-          className="flex-shrink-0 p-2 rounded-full bg-stone-200 dark:bg-stone-800 ring-1 ring-stone-300 dark:ring-stone-700"
+          style={{ y: imageY, backgroundColor: 'var(--color-bg-secondary)', boxShadow: '0 0 0 1px var(--color-border)' }}
+          className="flex-shrink-0 p-2 rounded-full"
         >
           <div className="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden">
             <img

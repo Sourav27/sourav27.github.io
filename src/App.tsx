@@ -24,7 +24,7 @@ function App() {
 
   return (
     <HelmetProvider>
-      <div className="min-h-screen font-sans bg-white text-stone-900 dark:bg-stone-950 dark:text-stone-100">
+      <div className="min-h-screen font-sans" style={{ backgroundColor: 'var(--color-bg-primary)', color: 'var(--color-text-primary)' }}>
         <Navbar theme={theme} onToggle={toggleTheme} />
         <Home />
         <Footer />

@@ -40,16 +40,16 @@ export const Hero = () => {
   const isHighlighted = wordIdx % ROLES.length === 0;
 
   return (
-    <div className="relative w-full h-[100svh] overflow-hidden bg-white dark:bg-stone-950">
+    <div className="relative w-full h-[100svh] overflow-hidden" style={{ backgroundColor: 'var(--color-bg-primary)' }}>
       {/* Background grid */}
-      <div className="absolute inset-0 z-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
+      <div className="absolute inset-0 z-0 bg-[linear-gradient(to_right,#70809014_1px,transparent_1px),linear-gradient(to_bottom,#70809014_1px,transparent_1px)] bg-[size:32px_32px]" />
 
       {/* Main content */}
       <div className="absolute inset-0 z-10 flex flex-col justify-center px-8 md:px-16 lg:px-24 max-w-6xl mx-auto">
 
         {/* Greeting */}
         <motion.p
-          className="text-[clamp(36px,8vw,88px)] font-normal text-stone-500 dark:text-stone-400 leading-none mb-2"
+          className="text-[clamp(36px,8vw,88px)] font-normal leading-none mb-2" style={{ color: 'var(--color-text-muted)' }}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1, ease: 'easeOut' }}
@@ -59,7 +59,7 @@ export const Hero = () => {
 
         {/* Name */}
         <motion.h1
-          className="text-[clamp(36px,8vw,88px)] font-normal text-stone-900 dark:text-stone-100 leading-none tracking-tight mb-4"
+          className="text-[clamp(36px,8vw,88px)] font-normal leading-none tracking-tight mb-4" style={{ color: 'var(--color-text-primary)' }}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.15, ease: 'easeOut' }}
@@ -75,13 +75,13 @@ export const Hero = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.4 }}
         >
-          <span className="text-stone-500 dark:text-stone-400">I'm a&nbsp;</span>
-          <span className={isHighlighted ? 'text-stone-900 dark:text-stone-100' : 'text-stone-500 dark:text-stone-400'}>
+          <span style={{ color: 'var(--color-text-muted)' }}>I'm a&nbsp;</span>
+          <span style={{ color: isHighlighted ? 'var(--color-text-primary)' : 'var(--color-text-muted)' }}>
             {roleText}
           </span>
           <span
-            className="inline-block w-px h-[1.1em] bg-stone-500 dark:bg-stone-400 ml-0.5 align-middle"
-            style={{ animation: 'blink 1s step-end infinite' }}
+            className="inline-block w-px h-[1.1em] ml-0.5 align-middle"
+            style={{ backgroundColor: 'var(--color-text-muted)', animation: 'blink 1s step-end infinite' }}
             aria-hidden="true"
           />
         </motion.p>
@@ -104,7 +104,9 @@ export const Hero = () => {
               href={href}
               target={blank ? '_blank' : undefined}
               rel={blank ? 'noopener noreferrer' : undefined}
-              className="text-base text-stone-500 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-100 transition-colors duration-200"
+              className="text-base transition-colors duration-200" style={{ color: 'var(--color-text-secondary)' }}
+            onMouseEnter={e => (e.currentTarget.style.color = 'var(--color-text-primary)')}
+            onMouseLeave={e => (e.currentTarget.style.color = 'var(--color-text-secondary)')}
             >
               {label}
             </a>
@@ -120,12 +122,12 @@ export const Hero = () => {
         transition={{ delay: 1, duration: 0.6 }}
       >
         <motion.div
-          className="w-px h-10 bg-stone-300 dark:bg-stone-700"
+          className="w-px h-10"
+          style={{ backgroundColor: 'var(--color-border)', originY: 0 }}
           animate={{ scaleY: [1, 0.4, 1] }}
           transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
-          style={{ originY: 0 }}
         />
-        <span className="text-[10px] uppercase tracking-widest text-stone-400 dark:text-stone-600">scroll</span>
+        <span className="text-[10px] uppercase tracking-widest" style={{ color: 'var(--color-text-muted)' }}>scroll</span>
       </motion.div>
     </div>
   );

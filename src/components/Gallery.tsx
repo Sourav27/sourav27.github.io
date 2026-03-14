@@ -16,11 +16,11 @@ export const Gallery = () => {
   };
 
   return (
-    <section id="gallery" className="py-24 md:py-32 bg-white dark:bg-stone-950">
+    <section id="gallery" className="py-24 md:py-32" style={{ backgroundColor: 'var(--color-bg-primary)' }}>
       <div className="max-w-6xl mx-auto px-6">
 
         <motion.h2
-          className="text-4xl md:text-5xl font-semibold text-stone-900 dark:text-stone-100 mb-12"
+          className="text-4xl md:text-5xl font-semibold mb-12" style={{ color: 'var(--color-text-primary)' }}
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-50px' }}
@@ -105,7 +105,7 @@ export const Gallery = () => {
             href="https://instagram.com/debu11"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-sm text-stone-400 dark:text-stone-500 hover:text-stone-900 dark:hover:text-stone-100 transition-colors duration-200"
+            className="inline-flex items-center gap-2 text-sm transition-colors duration-200" style={{ color: 'var(--color-text-muted)' }}
           >
             View more on Instagram
             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">

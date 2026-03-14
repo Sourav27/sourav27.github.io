@@ -12,7 +12,7 @@ const fadeUp = {
 function LogoOrName({ src, company }: { src: string; company: string }) {
   const [broken, setBroken] = useState(false);
   if (broken) {
-    return <span className="text-[11px] uppercase tracking-widest text-stone-400 dark:text-stone-600">{company}</span>;
+    return <span className="text-[11px] uppercase tracking-widest" style={{ color: 'var(--color-text-muted)' }}>{company}</span>;
   }
   return (
     <img
@@ -27,7 +27,7 @@ function LogoOrName({ src, company }: { src: string; company: string }) {
 function CardImage({ src, role, company }: { src?: string; role: string; company: string }) {
   const [broken, setBroken] = useState(false);
   return (
-    <div className="flex-1 min-h-[280px] md:min-h-0 relative overflow-hidden bg-stone-100 dark:bg-stone-900">
+    <div className="flex-1 min-h-[280px] md:min-h-0 relative overflow-hidden" style={{ backgroundColor: 'var(--color-bg-secondary)' }}>
       {src && !broken ? (
         <img
           src={src}
@@ -37,7 +37,7 @@ function CardImage({ src, role, company }: { src?: string; role: string; company
         />
       ) : (
         <div className="w-full h-full flex items-center justify-center">
-          <span className="text-stone-300 dark:text-stone-800 text-8xl font-light">
+          <span className="text-8xl font-light" style={{ color: 'var(--color-border)' }}>
             {company[0]}
           </span>
         </div>
@@ -48,11 +48,11 @@ function CardImage({ src, role, company }: { src?: string; role: string; company
 
 export const SelectedWork = () => {
   return (
-    <section id="work" className="py-24 md:py-32 bg-white dark:bg-stone-950">
+    <section id="work" className="py-24 md:py-32" style={{ backgroundColor: 'var(--color-bg-primary)' }}>
       <div className="max-w-6xl mx-auto px-6">
 
         <motion.h2
-          className="text-4xl md:text-5xl font-semibold text-stone-900 dark:text-stone-100 mb-20"
+          className="text-4xl md:text-5xl font-semibold mb-20" style={{ color: 'var(--color-text-primary)' }}
           {...fadeUp}
         >
           Selected Work
@@ -64,7 +64,8 @@ export const SelectedWork = () => {
               key={exp.id}
               className={`relative group flex flex-col ${
                 index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
-              } gap-0 border border-stone-200 dark:border-stone-800 rounded-lg overflow-hidden hover:border-stone-300 dark:hover:border-stone-700 transition-colors duration-200`}
+              } gap-0 rounded-lg overflow-hidden transition-colors duration-200`}
+              style={{ border: '1px solid var(--color-border)' }}
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-50px' }}
@@ -79,28 +80,28 @@ export const SelectedWork = () => {
                 {/* Label */}
                 <div className="flex items-center gap-3">
                   <LogoOrName src={exp.logo} company={exp.company} />
-                  <span className="text-[11px] uppercase tracking-widest text-stone-400 dark:text-stone-600">· {exp.period}</span>
+                  <span className="text-[11px] uppercase tracking-widest" style={{ color: 'var(--color-text-muted)' }}>· {exp.period}</span>
                 </div>
 
                 {/* Role */}
-                <h3 className="text-3xl md:text-4xl font-light text-stone-900 dark:text-stone-100 leading-tight">
+                <h3 className="text-3xl md:text-4xl font-light leading-tight" style={{ color: 'var(--color-text-primary)' }}>
                   {exp.role}
                 </h3>
 
                 {/* Description */}
-                <p className="text-base text-stone-600 dark:text-stone-400 leading-relaxed max-w-lg">
+                <p className="text-base leading-relaxed max-w-lg" style={{ color: 'var(--color-text-secondary)' }}>
                   {exp.description}
                 </p>
 
                 {/* Stats */}
                 {exp.stats && exp.stats.length > 0 && (
-                  <div className="flex flex-wrap gap-x-8 gap-y-6 pt-6 border-t border-stone-200 dark:border-stone-800">
+                  <div className="flex flex-wrap gap-x-8 gap-y-6 pt-6 border-t" style={{ borderColor: 'var(--color-border)' }}>
                     {exp.stats.map((stat) => (
                       <div key={stat.label} className="min-w-0">
-                        <div className="text-[36px] md:text-[48px] font-light text-stone-900 dark:text-stone-100 leading-none break-all">
+                        <div className="text-[36px] md:text-[48px] font-light leading-none break-all" style={{ color: 'var(--color-text-primary)' }}>
                           {stat.value}
                         </div>
-                        <div className="text-[11px] uppercase tracking-widest text-stone-400 dark:text-stone-600 mt-2 whitespace-nowrap">
+                        <div className="text-[11px] uppercase tracking-widest mt-2 whitespace-nowrap" style={{ color: 'var(--color-text-muted)' }}>
                           {stat.label}
                         </div>
                       </div>
@@ -111,7 +112,8 @@ export const SelectedWork = () => {
                 {/* Case study CTA */}
                 <a
                   href="#"
-                  className="inline-flex items-center gap-2 text-sm font-mono text-stone-500 dark:text-stone-400 hover:text-[#195DE6] hover:gap-3 transition-all duration-200"
+                  className="inline-flex items-center gap-2 text-sm font-mono hover:gap-3 transition-all duration-200"
+                  style={{ color: 'var(--color-text-secondary)' }}
                 >
                   View Case Study <span aria-hidden="true">→</span>
                 </a>
@@ -121,7 +123,8 @@ export const SelectedWork = () => {
                   {exp.skills.map((skill) => (
                     <span
                       key={skill}
-                      className="px-3 py-1 border border-stone-200 dark:border-stone-800 rounded-full text-[11px] uppercase tracking-widest text-stone-400 dark:text-stone-600 hover:border-stone-400 dark:hover:border-stone-600 hover:text-stone-700 dark:hover:text-stone-400 transition-colors duration-200"
+                      className="px-3 py-1 rounded-full text-[11px] uppercase tracking-widest transition-colors duration-200"
+                    style={{ border: '1px solid var(--color-border)', color: 'var(--color-text-muted)' }}
                     >
                       {skill}
                     </span>
@@ -130,17 +133,17 @@ export const SelectedWork = () => {
 
                 {/* Testimonial */}
                 {exp.testimonial && (
-                  <div className="pt-6 border-t border-stone-200 dark:border-stone-800">
-                    <p className="text-sm text-stone-600 dark:text-stone-400 italic leading-relaxed mb-3">
+                  <div className="pt-6 border-t" style={{ borderColor: 'var(--color-border)' }}>
+                    <p className="text-sm italic leading-relaxed mb-3" style={{ color: 'var(--color-text-secondary)' }}>
                       "{exp.testimonial.text}"
                     </p>
                     <div className="flex items-center gap-3">
-                      <div className="w-6 h-6 rounded-full bg-stone-200 dark:bg-stone-800 flex items-center justify-center text-[10px] text-stone-600 dark:text-stone-400 font-medium">
+                      <div className="w-6 h-6 rounded-full flex items-center justify-center text-[10px] font-medium" style={{ backgroundColor: 'var(--color-bg-secondary)', color: 'var(--color-text-secondary)' }}>
                         {exp.testimonial.author[0]}
                       </div>
                       <div>
-                        <p className="text-xs text-stone-700 dark:text-stone-300 font-medium">{exp.testimonial.author}</p>
-                        <p className="text-xs text-stone-400 dark:text-stone-600">{exp.testimonial.role}</p>
+                        <p className="text-xs font-medium" style={{ color: 'var(--color-text-primary)' }}>{exp.testimonial.author}</p>
+                        <p className="text-xs" style={{ color: 'var(--color-text-muted)' }}>{exp.testimonial.role}</p>
                       </div>
                     </div>
                   </div>

@@ -39,10 +39,9 @@ export const Navbar = ({ theme, onToggle }: NavbarProps) => {
       {/* ── Main bar ── */}
       <motion.nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled
-            ? 'bg-white/80 dark:bg-stone-950/80 backdrop-blur-md'
-            : 'bg-transparent'
+          scrolled ? 'backdrop-blur-md' : ''
         }`}
+        style={scrolled ? { backgroundColor: 'color-mix(in srgb, var(--color-bg-primary) 85%, transparent)' } : {}}
         initial={{ opacity: 0, y: -8 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0 }}
@@ -51,7 +50,9 @@ export const Navbar = ({ theme, onToggle }: NavbarProps) => {
           {/* Monogram */}
           <a
             href="#"
-            className="text-stone-900 dark:text-stone-100 text-base font-medium tracking-wide hover:text-stone-500 dark:hover:text-stone-400 transition-colors duration-150"
+            className="text-base font-medium tracking-wide transition-colors duration-150" style={{ color: 'var(--color-text-primary)' }}
+            onMouseEnter={e => (e.currentTarget.style.color = 'var(--color-text-muted)')}
+            onMouseLeave={e => (e.currentTarget.style.color = 'var(--color-text-primary)')}
           >
             S.D.
           </a>
@@ -62,7 +63,9 @@ export const Navbar = ({ theme, onToggle }: NavbarProps) => {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-sm text-stone-600 dark:text-stone-300 hover:text-stone-900 dark:hover:text-stone-100 transition-colors duration-150"
+                className="text-sm transition-colors duration-150" style={{ color: 'var(--color-text-secondary)' }}
+                onMouseEnter={e => (e.currentTarget.style.color = 'var(--color-text-primary)')}
+                onMouseLeave={e => (e.currentTarget.style.color = 'var(--color-text-secondary)')}
               >
                 {link.label}
               </a>
@@ -71,14 +74,20 @@ export const Navbar = ({ theme, onToggle }: NavbarProps) => {
               href="/resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm text-stone-500 dark:text-stone-400 border border-stone-300 dark:border-stone-800 rounded px-3 py-1 hover:border-stone-500 dark:hover:border-stone-600 hover:text-stone-900 dark:hover:text-stone-100 transition-all duration-200"
+              className="text-sm rounded px-3 py-1 transition-all duration-200"
+              style={{ color: 'var(--color-text-secondary)', border: '1px solid var(--color-border)' }}
+              onMouseEnter={e => { e.currentTarget.style.color = 'var(--color-text-primary)'; e.currentTarget.style.borderColor = 'var(--color-text-secondary)'; }}
+              onMouseLeave={e => { e.currentTarget.style.color = 'var(--color-text-secondary)'; e.currentTarget.style.borderColor = 'var(--color-border)'; }}
             >
               Resume
             </a>
             <button
               onClick={onToggle}
               aria-label="Toggle theme"
-              className="w-8 h-8 flex items-center justify-center rounded-full text-stone-500 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-100 transition-colors duration-200 cursor-pointer"
+              className="w-8 h-8 flex items-center justify-center rounded-full transition-colors duration-200 cursor-pointer"
+              style={{ color: 'var(--color-text-secondary)' }}
+              onMouseEnter={e => (e.currentTarget.style.color = 'var(--color-text-primary)')}
+              onMouseLeave={e => (e.currentTarget.style.color = 'var(--color-text-secondary)')}
             >
               {theme === 'dark' ? (
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -97,7 +106,10 @@ export const Navbar = ({ theme, onToggle }: NavbarProps) => {
             <button
               onClick={onToggle}
               aria-label="Toggle theme"
-              className="w-8 h-8 flex items-center justify-center text-stone-500 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-100 transition-colors duration-200 cursor-pointer"
+              className="w-8 h-8 flex items-center justify-center transition-colors duration-200 cursor-pointer"
+              style={{ color: 'var(--color-text-secondary)' }}
+              onMouseEnter={e => (e.currentTarget.style.color = 'var(--color-text-primary)')}
+              onMouseLeave={e => (e.currentTarget.style.color = 'var(--color-text-secondary)')}
             >
               {theme === 'dark' ? (
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -115,12 +127,12 @@ export const Navbar = ({ theme, onToggle }: NavbarProps) => {
               aria-label="Toggle menu"
             >
               <motion.span
-                className="block w-5 h-px bg-stone-900 dark:bg-stone-100 origin-center"
+                className="block w-5 h-px origin-center" style={{ backgroundColor: 'var(--color-text-primary)' }}
                 animate={menuOpen ? { rotate: 45, y: 4 } : { rotate: 0, y: 0 }}
                 transition={{ duration: 0.2 }}
               />
               <motion.span
-                className="block w-5 h-px bg-stone-900 dark:bg-stone-100 origin-center"
+                className="block w-5 h-px origin-center" style={{ backgroundColor: 'var(--color-text-primary)' }}
                 animate={menuOpen ? { rotate: -45, y: -4 } : { rotate: 0, y: 0 }}
                 transition={{ duration: 0.2 }}
               />
@@ -133,7 +145,7 @@ export const Navbar = ({ theme, onToggle }: NavbarProps) => {
       <AnimatePresence>
         {menuOpen && (
           <motion.div
-            className="fixed inset-0 z-40 bg-white dark:bg-stone-950 flex flex-col items-center justify-center gap-8"
+            className="fixed inset-0 z-40 flex flex-col items-center justify-center gap-8" style={{ backgroundColor: 'var(--color-bg-primary)' }}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -143,7 +155,8 @@ export const Navbar = ({ theme, onToggle }: NavbarProps) => {
               <motion.a
                 key={link.href}
                 href={link.href}
-                className="text-2xl font-light text-stone-900 dark:text-stone-100 hover:text-stone-400 dark:hover:text-stone-500 transition-colors"
+                className="text-2xl font-light transition-colors"
+                style={{ color: 'var(--color-text-primary)' }}
                 onClick={() => setMenuOpen(false)}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -153,7 +166,7 @@ export const Navbar = ({ theme, onToggle }: NavbarProps) => {
               </motion.a>
             ))}
             <motion.div
-              className="w-8 h-px bg-stone-200 dark:bg-stone-800"
+              className="w-8 h-px" style={{ backgroundColor: 'var(--color-border)' }}
               initial={{ opacity: 0, scaleX: 0 }}
               animate={{ opacity: 1, scaleX: 1 }}
               transition={{ delay: 0.25 }}
@@ -162,7 +175,8 @@ export const Navbar = ({ theme, onToggle }: NavbarProps) => {
               href="/resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-2xl font-light text-stone-900 dark:text-stone-100 hover:text-stone-400 dark:hover:text-stone-500 transition-colors"
+              className="text-2xl font-light transition-colors"
+              style={{ color: 'var(--color-text-primary)' }}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3 }}
