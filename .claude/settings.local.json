@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx playwright:*)",
+      "WebFetch(domain:edwinle.com)",
+      "WebFetch(domain:contribution.usercontent.google.com)",
+      "mcp__stitch__get_screen",
+      "Bash(npm install:*)",
+      "Bash(npm ls:*)",
+      "Bash(npm view:*)",
+      "Bash(npx tsc:*)",
+      "WebFetch(domain:lh3.googleusercontent.com)",
+      "Bash(npm run:*)"
+    ]
+  }
+}
