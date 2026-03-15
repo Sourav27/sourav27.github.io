@@ -48,6 +48,8 @@
   --color-text-muted:      #708090;   /* slate gray */
   --color-border:          #253038;   /* charcoal border */
   --color-accent:          #9aaab8;   /* slate accent */
+  --company-logo-filter: none;
+  --school-logo-filter:  brightness(0) invert(1);
 }
 
 [data-theme="light"] {
@@ -58,6 +60,8 @@
   --color-text-muted:      #a8b4be;   /* light slate */
   --color-border:          #d3d3d3;   /* light gray */
   --color-accent:          #36454f;   /* charcoal accent */
+  --company-logo-filter: invert(1);
+  --school-logo-filter:  none;
 }
 
 /* ─── Base ──────────────────────────────────────────────────────── */
