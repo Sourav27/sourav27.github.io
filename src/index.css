@@ -76,12 +76,6 @@ html, body {
   color: #fff;
 }
 
-/* ─── Marquee animation ─────────────────────────────────────────── */
-@keyframes marquee {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
-}
-
 /* ─── Typewriter cursor blink ───────────────────────────────────── */
 @keyframes blink {
   from, to { opacity: 1; }
